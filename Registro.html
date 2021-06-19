@@ -25,10 +25,9 @@
     <main>
       <div class="container text-white">
         <div class="row">
-          <form class="needs-validation" novalidate>
-            <div class="card">
+            <div class="card col-12">
               <div class="card-header">
-                <h3 class="card-title text-center">NUEVA PUBLICACION</h3>
+                <h2 class="card-title text-center">NUEVA PUBLICACIÓN</h2>
               </div>
               <div class="card-body">
                 <div class="row">
@@ -42,14 +41,15 @@
                     />
                   </div>
                   <div class="form-group col-6">
-                    <label>Descripcion</label>
+                    <label>Autor</label>
                     <input
                       type="text"
                       class="form-control"
-                      id="descripText"
+                      id="authorText"
                       required
                     />
                   </div>
+                  
                 </div>
                 <div class="row">
                   <div class="form-group col-6">
@@ -62,18 +62,6 @@
                     />
                   </div>
                   <div class="form-group col-6">
-                    <label>Autor</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="authorText"
-                      required
-                    />
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="form-group col-6">
                     <label>Año</label>
                     <input
                       type="text"
@@ -82,6 +70,9 @@
                       required
                     />
                   </div>
+                </div>
+
+                <div class="row">
                   <div class="form-group col-6">
                     <label>Editorial</label>
                     <input
@@ -91,23 +82,37 @@
                       required
                     />
                   </div>
+                  <div class="form-group col-6">
+                    <label>Imagen (url)</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="imgText"
+                      required
+                    />
+                  </div>
                 </div>
-
                 <div class="form-group mb-4">
-                  <label>Imagen(url)</label>
+                  <label>Contraportada (breve descripcion)</label>
                   <input
                     type="text"
                     class="form-control"
-                    id="imgText"
+                    id="descripText"
                     required
                   />
                 </div>
-                <button class="btn btn-danger btn-block" onclick="agregarLib()">
+
+                
+                <button class="btn btn-danger btn-block mt-4" onclick="agregarLib()">
                   Enviar
                 </button>
               </div>
             </div>
-          </form>
+
+
+            <div class="row">
+              <a href="/Busqueda.html">ir a la tabla</a>
+            </div>
 
           <!--  -->
           <!-- <script>

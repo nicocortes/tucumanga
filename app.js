@@ -16,12 +16,12 @@ let cuerpoLib = document.querySelector("#cuerpoLib") || ""
 class Libreria{
     constructor(titulo,descripcion,categoria,autor,año,editorial,imagen){
         this.titulo = titulo
-        this.descripcion = descripcion
-        this.categoria = categoria
         this.autor = autor
+        this.categoria = categoria
         this.año = año
         this.editorial = editorial
         this.imagen = imagen
+        this.descripcion = descripcion
     }
 }
 
