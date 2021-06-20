@@ -26,6 +26,12 @@
 }
 /* Fin de Registro */
 
+/* Sección login */
+.formulario{
+    width: 40%;
+}
+/* Fin login */
+
 /* Sección footer */
 .footer-pagina{
     margin-top: 50px;
@@ -33,7 +39,4 @@
     padding-bottom: 20px;
     background-color: #1C1C1C;
     color: white;
-}
-.formulario{
-    width: 40%;
 }
