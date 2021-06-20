@@ -8,7 +8,6 @@
     width: 650px;
     height: 1000;
 }
-
 /* Fin del Home */
 
 
@@ -27,11 +26,14 @@
 }
 /* Fin de Registro */
 
-/* sección footer */
+/* Sección footer */
 .footer-pagina{
     margin-top: 50px;
     padding-top: 20px;
     padding-bottom: 20px;
     background-color: #1C1C1C;
     color: white;
+}
+.formulario{
+    width: 40%;
 }
