@@ -1,12 +1,26 @@
-/* sección registro */
-.card{
-    background-color: rgb(36, 36, 36);
-    margin-top: 50px;
-    padding: 100px;
+/* Home */
+.img-topm{
+    width: 650px;
+    height: 1000;
 }
 
+/* Fin del Home */
 
 
+/* Registro */
+.fondo-registro{
+    background-color: rgb(36, 36, 36) ;
+}
+
+.cardLib{
+    background-color: rgb(36, 36, 36);
+    margin-top: 70px;
+    margin-bottom: 150px;
+    padding-top:50px ;
+    padding-bottom: 30px;
+
+}
+/* Fin de Registro */
 
 /* sección footer */
 .footer-pagina{

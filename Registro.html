@@ -16,12 +16,12 @@
       crossorigin="anonymous"
     />
 
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/styles.css" />
 
-    <title>Tucumanga</title>
+    <title>Hello, world!</title>
   </head>
-  <body>
+  <body class="fondo-registro">
+
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,7 +29,7 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-              <a class="nav-link" href="login.html"><i class="fa fa-sign-in" aria-hidden="true"></i> INICIA SESIÓN<span class="sr-only">(current)</span></a>
+              <a class="nav-link active" href="#"><i class="fa fa-sign-in" aria-hidden="true"></i> INICIA SESIÓN<span class="sr-only">(current)</span></a>
               <a class="nav-link" href="home.html">INICIO</a>
               <a class="nav-link" href="busqueda.html">BIBLIOTECA</a>
               <a class="nav-link" href="#" tabindex="-1">CONTACTO</a>
@@ -38,162 +38,166 @@
           <a class="navbar-brand" href="home.html"><img src="img/logo.png" alt=""></a>
         </nav>
     </header>
-    <main>
-      <div class="container text-white">
-        <div class="row">
-            <div class="card col-12">
-              <div class="card-header">
-                <h2 class="card-title text-center">NUEVA PUBLICACIÓN</h2>
+
+<main>
+  <div class="container text-white">
+    <div class="row">
+        <div class="cardLib col-12">
+          <div class="cardLib-header">
+            <h2 class="card-titleLib text-center mb-4">NUEVA PUBLICACIÓN</h2>
+            <br>
+          </div>
+          <div class="card-bodyLib">
+            <div class="row">
+              <div class="form-group col-lg-6 col-md-12">
+                <label>TITULO</label>
+                <input
+                  type="text"
+                  class="form-control mb-4"
+                  id="titleText"
+                  required
+                />
               </div>
-              <div class="card-body">
-                <div class="row">
-                  <div class="form-group col-6">
-                    <label>Titulo</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="titleText"
-                      required
-                    />
-                  </div>
-                  <div class="form-group col-6">
-                    <label>Autor</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="authorText"
-                      required
-                    />
-                  </div>
-                  
-                </div>
-                <div class="row">
-                  <div class="form-group col-6">
-                    <label>Categoria</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="categText"
-                      required
-                    />
-                  </div>
-                  <div class="form-group col-6">
-                    <label>Año</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="añoText"
-                      required
-                    />
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="form-group col-6">
-                    <label>Editorial</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="ediText"
-                      required
-                    />
-                  </div>
-                  <div class="form-group col-6">
-                    <label>Imagen (url)</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="imgText"
-                      required
-                    />
-                  </div>
-                </div>
-                <div class="form-group mb-4">
-                  <label>Contraportada (breve descripcion)</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="descripText"
-                    required
-                  />
-                </div>
-
-                
-                <button class="btn btn-danger btn-block mt-4" onclick="agregarLib()">
-                  Enviar
-                </button>
+              <div class="form-group col-lg-6 col-md-12">
+                <label>AUTOR</label>
+                <input
+                  type="text"
+                  class="form-control mb-4"
+                  id="authorText"
+                  required
+                />
+              </div>
+              
+            </div>
+            <div class="row">
+              <div class="form-group col-lg-6 col-md-12">
+                <label>CATEGORIA</label>
+                <input
+                  type="text"
+                  class="form-control mb-4"
+                  id="categText"
+                  required
+                />
+              </div>
+              <div class="form-group col-lg-6 col-md-12">
+                <label>AÑO</label>
+                <input
+                  type="text"
+                  class="form-control mb-4"
+                  id="añoText"
+                  required
+                />
               </div>
             </div>
-
 
             <div class="row">
-              <a href="/Busqueda.html">ir a la tabla</a>
+              <div class="form-group col-lg-6 col-md-12">
+                <label>EDITORIAL</label>
+                <input
+                  type="text"
+                  class="form-control mb-4"
+                  id="ediText"
+                  required
+                />
+              </div>
+              <div class="form-group col-lg-6 col-md-12">
+                <label>IMAGEN (url)</label>
+                <input
+                  type="text"
+                  class="form-control mb-4"
+                  id="imgText"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-group mb-4">
+              <label>CONTRAPORTADA (breve descripcion)</label>
+              <input
+                type="text"
+                class="form-control mb-4"
+                id="descripText"
+                required
+              />
             </div>
 
-          <!--  -->
-          <!-- <script>
-            // Example starter JavaScript for disabling form submissions if there are invalid fields
-            (function () {
-              "use strict";
-              window.addEventListener(
-                "load",
-                function () {
-                  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-                  var forms =
-                    document.getElementsByClassName("needs-validation");
-                  // Loop over them and prevent submission
-                  var validation = Array.prototype.filter.call(
-                    forms,
-                    function (form) {
-                      form.addEventListener(
-                        "submit",
-                        function (event) {
-                          if (form.checkValidity() === false) {
-                            event.preventDefault();
-                            event.stopPropagation();
-                          }
-                          form.classList.add("was-validated");
-                        },
-                        false
-                      );
-                    }
+            
+            <button class="btn btn-danger btn-block" onclick="agregarLib()">
+              Enviar
+            </button>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <a href="/Busqueda.html">ir a la tabla</a>
+        </div>
+
+      <!--  -->
+      <!-- <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function () {
+          "use strict";
+          window.addEventListener(
+            "load",
+            function () {
+              // Fetch all the forms we want to apply custom Bootstrap validation styles to
+              var forms =
+                document.getElementsByClassName("needs-validation");
+              // Loop over them and prevent submission
+              var validation = Array.prototype.filter.call(
+                forms,
+                function (form) {
+                  form.addEventListener(
+                    "submit",
+                    function (event) {
+                      if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                      }
+                      form.classList.add("was-validated");
+                    },
+                    false
                   );
-                },
-                false
+                }
               );
-            })();
-          </script> -->
-          <!--  -->
-        </div>
+            },
+            false
+          );
+        })();
+      </script> -->
+      <!--  -->
+    </div>
+  </div>
+</main>
+
+ <!--Footer-->
+ <footer class="footer-pagina">
+  <div class="container">
+    <div class="row text-center mt-2">
+      <div class="col-12 col-md-4 mb-2 pb-4 mx-auto">
+        <img  src="img/logo.png" width="100px" alt="logo footer">
       </div>
-    </main>
-   <!--Footer-->
-   <footer class="footer-pagina">
-    <div class="container">
-      <div class="row text-center mt-2">
-        <div class="col-12 col-md-4 mb-2 pb-4 mx-auto">
-          <img  src="img/logo.png" width="100px" alt="logo footer">
-        </div>
-        <div class="col-12 col-md-4 mb-4 mb-md-2 d-flex align-items-center justify-content-center">
-                <a href="#"><i class="fa fa-facebook fa-2x text-white mx-2" aria-hidden="true"></i></a>
-                <a href="#"><i class="fa fa-twitter fa-2x text-white mx-2" aria-hidden="true"></i></a>
-                <a href="#"><i class="fa fa-instagram fa-2x text-white mx-2" aria-hidden="true"></i></a>
-        </div>
-        <div class="col-12 col-md-4 mb-4 mb-md-2 d-flex align-items-center justify-content-center">
-          <span>+543815673097 <br> Tucumán, Argentina <br> mangatuc@gmail.com</span>
-        </div>
+      <div class="col-12 col-md-4 mb-4 mb-md-2 d-flex align-items-center justify-content-center">
+              <a href="#"><i class="fa fa-facebook fa-2x text-white mx-2" aria-hidden="true"></i></a>
+              <a href="#"><i class="fa fa-twitter fa-2x text-white mx-2" aria-hidden="true"></i></a>
+              <a href="#"><i class="fa fa-instagram fa-2x text-white mx-2" aria-hidden="true"></i></a>
       </div>
-      <div class="row">
-        <div class="col-12 text-center">
-          <p class="small">&copy; Tucumanga 2021. Todos los derechos reservados.</p>
-        </div>
+      <div class="col-12 col-md-4 mb-4 mb-md-2 d-flex align-items-center justify-content-center">
+        <span>+543815673097 <br> Tucumán, Argentina <br> mangatuc@gmail.com</span>
       </div>
     </div>
-  </footer>
+    <div class="row">
+      <div class="col-12 text-center">
+        <p class="small">&copy; Tucumanga 2021. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </div>
+</footer>
 
 <!--Fin footer-->
+   
 
-    <script src="/app.js"></script>
+    <script src="/Registro.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -204,7 +208,7 @@
       integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
       crossorigin="anonymous"
     ></script>
-        <!-- iconos: -->
-        <script src="https://use.fontawesome.com/a79dcfd0b0.js"></script>
+    <!-- iconos: -->
+    <script src="https://use.fontawesome.com/a79dcfd0b0.js"></script>
   </body>
 </html>

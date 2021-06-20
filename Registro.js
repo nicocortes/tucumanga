@@ -1,4 +1,6 @@
 let biblioteca=JSON.parse(localStorage.getItem('biblioteca')) || []
+// let bibliot={}
+
 
 //elemento capturado en el formulario de registro
 let titulo = document.querySelector("#titleText")
@@ -8,6 +10,7 @@ let autor = document.querySelector("#authorText")
 let año = document.querySelector("#añoText")
 let editorial= document.querySelector("#ediText")
 let imagen = document.querySelector("#imgText")
+// let visitas = 0
 
 //capturo los datos y se dirigen a la tabla
 let cuerpoLib = document.querySelector("#cuerpoLib") || ""
@@ -22,6 +25,7 @@ class Libreria{
         this.editorial = editorial
         this.imagen = imagen
         this.descripcion = descripcion
+        // this.visitas = visitas
     }
 }
 
@@ -95,7 +99,48 @@ function borrarLib(id){
 
 
 
+// //Posicion del top
+// function positionTop(){
+//     bibliot.visitas=bibliot.visitas + 1
+//     localStorage.setItem('biblioteca',JSON.stringify(biblioteca))
+// }
+
+// // Mover la posicion del top
+// function moverVisto(){
+//     bibliot = biblioteca
+//     bibliot.sort(function(b,a){
+//         if(a.visitas > b.visitas){
+//             return 1
+//         }
+//         if(a.visitas < b.visitas){
+//             return -1
+//         }
+//         return 0
+//     })
+// }
+
+
+// //Imprimir los datos del top
+// function masVistos(){
+//     topTabla.innerHTML = ""
+//     bibliot = biblioteca
+//     biblioteca = JSON.parse(localStorage.getItem("biblioteca")) || []
+//     bibliot.forEach(function(libro,index){
+//         let colum = document.createElement("tr")
+//         let info = `
+//         <th scope="row ">${index + 1}</th>
+//         <td>${libro.alias}</td>
+//         <td>${libro.visitas}</td> 
+//         `
+//         colum.innerHTML = info
+//         topTabla.appendChild(colum) 
+//     })
+// }
+
+
 //verificacion de tabla
 if(cuerpoLib){
     cargarLib(biblioteca)
 }
+// moverVisto()
+// masVistos()
