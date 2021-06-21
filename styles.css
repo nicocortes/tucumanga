@@ -48,6 +48,26 @@
 }
 /* Fin de Registro */
 
+/* Sección biblioteca */
+@media (max-width: 768px) {
+   
+  
+    .tableBiblioteca {
+        
+      width: 100%;
+    }
+    .tableBiblioteca tr {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      border: 1px solid rgb(0, 0, 0);
+      padding: 1em;
+      margin-bottom: 2em;
+      
+    }
+  }
+/* Fin de Sección biblioteca */
+
 /* Sección login */
 .formulario{
     width: 40%;
