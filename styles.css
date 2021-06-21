@@ -1,3 +1,9 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
 /* Sección navbar */
 .fondoNav{
     background-color: #1C1C1C;
@@ -5,25 +11,49 @@
 
 /* Home */
 
-.img-topm {
-    width: 650px;
-    height: 1000;
-    transition-property: filter;
-    transition-duration: 0.3s;
-  }
-  
-  .img-topm:hover {
-    transform: scale(1.05);
-    filter: grayscale(1)
-  }
 
-  .titleHome{
+ .titleHome{
       background: rgb(255, 0, 0);
       border-radius: 20px;
       padding:6px 9px ;
      
   }
 
+/* imagenes del home */
+.img-fluid{
+  width: 650px;
+  height: 1000;
+  border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+  }
+
+.img-topm {
+    transition-property: filter;
+    transition-duration: 0.3s;
+    
+  }
+
+  .img-topm:hover {
+    transform: scale(1.05);
+    filter: grayscale(1)
+    
+  }
+
+  /* texto del home */
+  .capa{
+    top: 0;
+    position: relative;
+    z-index: 1;
+    padding: 5px;
+    width: 100%;
+    background: red;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+  }
+ 
+
+ 
+/* tabla del home */
   .tableH-Title{
       background-color: red;
   }
