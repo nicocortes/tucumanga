@@ -12,10 +12,6 @@
       integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
       crossorigin="anonymous"
     />
-    <link
-      rel="stylesheet"
-      href="path/to/font-awesome/css/font-awesome.min.css"
-    />
     <!-- Tipografía Montserrat -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -62,7 +58,9 @@
       <section>
         <div class="container">
           <h1 class="text-center p-5">REGÍSTRATE</h1>
-          <form class="container registroLogin">
+
+          <p class="d-none" id="error">*Todos los campos son obligatorios</p>
+          <form class="container registroLogin" onsubmit="agregarUsuarios(event)">
             <div class="row">
                 <div class="col">
                     <label for="nombreRegistro" class="font-weight-bold">NOMBRE</label>
@@ -90,6 +88,7 @@
                   >CONTRASEÑA</label
                 >
                 <input
+                onblur="validarContraseña(this)"
                   type="password"
                   class="form-control"
                   id="passwordRegistro"
