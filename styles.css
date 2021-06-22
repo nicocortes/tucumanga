@@ -5,123 +5,125 @@
 }
 
 /* Sección navbar */
-.fondoNav{
-    background-color: #1C1C1C;
+.fondoNav {
+  background-color: #1c1c1c;
 }
 
 /* Home */
 
-
- .titleHome{
-      background: rgb(255, 0, 0);
-      border-radius: 20px;
-      padding:6px 9px ;
-     
-  }
+.titleHome {
+  background: rgb(255, 0, 0);
+  border-radius: 20px;
+  padding: 6px 9px;
+}
 
 /* imagenes del home */
-.img-fluid{
+.img-fluid {
   width: 650px;
   height: 1000;
   border-top-left-radius: 7px;
-    border-top-right-radius: 7px;
-  }
-
-.img-topm {
-    transition-property: filter;
-    transition-duration: 0.3s;
-    
-  }
-
-  .img-topm:hover {
-    transform: scale(1.05);
-    filter: grayscale(1)
-    
-  }
-
-  /* texto del home */
-  .capa{
-    top: 0;
-    position: relative;
-    z-index: 1;
-    padding: 5px;
-    width: 100%;
-    background: red;
-    border-bottom-left-radius: 7px;
-    border-bottom-right-radius: 7px;
-  }
- 
-
- 
-/* tabla del home */
-  .tableH-Title{
-      background-color: red;
-  }
-/* Fin del Home */
-
-
-
-
-/* Registro */
-.fondo-registro{
-    background-color: rgb(36, 36, 36) ;
+  border-top-right-radius: 7px;
 }
 
-.cardLib{
-    background-color: rgb(36, 36, 36);
-    margin-top: 70px;
-    margin-bottom: 150px;
-    padding-top:50px ;
-    padding-bottom: 40px;
-   
+.img-topm {
+  transition-property: filter;
+  transition-duration: 0.3s;
+}
 
+.img-topm:hover {
+  transform: scale(1.05);
+  filter: grayscale(1);
+}
+
+/* texto del home */
+.capa {
+  top: 0;
+  position: relative;
+  z-index: 1;
+  padding: 5px;
+  width: 100%;
+  background: red;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+/* tabla del home */
+.tableH-Title {
+  background-color: red;
+}
+/* Fin del Home */
+
+/* Registro */
+.fondo-registro {
+  background-color: rgb(36, 36, 36);
+}
+
+.cardLib {
+  background-color: rgb(36, 36, 36);
+  margin-top: 70px;
+  margin-bottom: 150px;
+  padding-top: 50px;
+  padding-bottom: 40px;
 }
 /* Fin de Registro */
 
 /* Sección biblioteca */
 @media (max-width: 768px) {
-   
-  
-    .tableBiblioteca {
-        
-      width: 100%;
-    }
-    .tableBiblioteca tr {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      border: 1px solid rgb(0, 0, 0);
-      padding: 1em;
-      margin-bottom: 2em;
-      
-    }
+  .tableBiblioteca {
+    width: 100%;
   }
+  .tableBiblioteca tr {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid rgb(0, 0, 0);
+    padding: 1em;
+    margin-bottom: 2em;
+  }
+}
 /* Fin de Sección biblioteca */
 
 /* Sección login */
-.formulario{
-    width: 50%;
+.formulario {
+  width: 50%;
 }
 
 @media (max-width: 360px) {
-   
-  
-    .formulario {
-        
-      width: 90%;
-    }
+  .formulario {
+    width: 90%;
   }
+}
 
-.registroLogin{
-    width: 70%;
+.registroLogin {
+  width: 70%;
 }
 /* Fin login */
 
+/* Contacto */
+
+textarea.form-control::placeholder {
+  color: rgb(146, 146, 146);
+}
+
+.form-hr {
+  width: 30%;
+  height: 10px;
+  border: none;
+  margin-left: 0;
+  background-color: #dc3545;
+}
+
+#contact-wp {
+  font-size: 20px;
+}
+
+/* Fin de contacto */
+
 /* Sección footer */
-.footer-pagina{
-    margin-top: 50px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    background-color: #1C1C1C;
-    color: white;
+.footer-pagina {
+  margin-top: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #1c1c1c;
+  color: white;
 }
