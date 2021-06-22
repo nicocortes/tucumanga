@@ -13,7 +13,8 @@ class Usuario{
         this.nombre = nombre,
         this.apellido = apellido,
         this.mail = mail,
-        this.contraseña = contraseña
+        this.contraseña = contraseña,
+        this.verificado = false
     }
 }
 
@@ -21,13 +22,13 @@ class Usuario{
 
 const agregarUsuarios = function(e){
     e.preventDefault();
-    if(nombre.value && apellido.value && mail.value && contraseña.value>8){
+    if(nombre.value && apellido.value && mail.value && contraseña.value.length>8){
         usuarios.push(
             new Usuario(
                 nombre.value.toLowerCase(),
                 apellido.value.toLowerCase(),
                 mail.value,
-                contraseña.value
+                contraseña.value,
             )
         )
         localStorage.setItem("usuariosKey", JSON.stringify(usuarios));
@@ -42,10 +43,29 @@ function updateDatos(){
     apellido.value = ""
     mail.value = ""
     contraseña.value = ""
+    nombre.className = 'form-control'
+    apellido.className = 'form-control'
+    mail.className = 'form-control'
+    contraseña.className = 'form-control'
 }
 
 function validarContraseña(element){
-if(element.value<8){
+if(element.value.length===0){
+element.className='form-control'
+}else{
+    if(element.value.length<8){
+        element.className= 'form-control is-invalid'
+        return false
+    }else{
+        element.className = 'form-control is-valid'
+        return true
+    }
+}
+}
+
+
+function validarGeneral(element){
+if(!element.value){
 element.className='form-control is-invalid'
 }else{
     element.className = 'form-control is-valid'
