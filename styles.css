@@ -16,14 +16,19 @@
   border-radius: 20px;
   padding: 6px 9px;
 }
+.top-title-table{
+  border-radius: 7px;
+  background-color: red;
+}
 
 /* imagenes del home */
 .img-fluid {
   width: 650px;
-  height: 1000;
+  height: 100%;
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
 }
+
 
 .img-topm {
   transition-property: filter;
@@ -37,20 +42,30 @@
 
 /* texto del home */
 .capa {
-  top: 0;
-  position: relative;
   z-index: 1;
-  padding: 5px;
-  width: 100%;
+  padding: 1px;
   background: red;
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
 }
 
 /* tabla del home */
-.tableH-Title {
+.btn-irRegistro{
   background-color: red;
+  color: white;
 }
+.discord{
+  width: 100%;
+  height: 350px;
+}
+.facebook{
+  width: 100%;
+  height: 474px;
+}
+.title-top{
+  border-radius: 7px;
+}
+
 /* Fin del Home */
 
 /* Registro */
