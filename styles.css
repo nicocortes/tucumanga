@@ -100,7 +100,20 @@
 
 /* Sección login */
 .formulario{
-    width: 40%;
+    width: 50%;
+}
+
+@media (max-width: 360px) {
+   
+  
+    .formulario {
+        
+      width: 90%;
+    }
+  }
+
+.registroLogin{
+    width: 70%;
 }
 /* Fin login */
 

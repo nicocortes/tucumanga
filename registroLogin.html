@@ -41,7 +41,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-link active" href="#"
+            <a class="nav-link active" href="login.html"
               ><i class="fa fa-sign-in" aria-hidden="true"></i> INICIA
               SESIÓN<span class="sr-only">(current)</span></a
             >
@@ -58,50 +58,55 @@
 
     <main>
 
-      <!-- Seccion Login -->
+      <!-- Seccion Registro -->
       <section>
-        <br />
         <div class="container">
-          <h1 class="text-center p-5">INICIA SESIÓN</h1>
-          <form class="container formulario">
-            <div class="form-group">
-              <label for="exampleInputEmail1" class="font-weight-bold"
-                >MAIL</label
-              >
-              <input
-                type="email"
-                class="form-control"
-                id="exampleInputEmail1"
-                placeholder="example@gmail.com"
-                aria-describedby="emailHelp"
-              />
-            </div>
-            <div class="form-group mt-4">
-              <label for="exampleInputPassword1" class="font-weight-bold"
-                >CONTRASEÑA</label
-              >
-              <input
-                type="password"
-                class="form-control"
-                id="exampleInputPassword1"
-              />
-              <small>*Debe contener 8 o más caracteres</small>
+          <h1 class="text-center p-5">REGÍSTRATE</h1>
+          <form class="container registroLogin">
+            <div class="row">
+                <div class="col">
+                    <label for="nombreRegistro" class="font-weight-bold">NOMBRE</label>
+                  <input type="text" class="form-control" placeholder="First name" id="nombreRegistro">
+                </div>
+                <div class="col">
+                    <label for="apellidoRegistro" class="font-weight-bold">APELLIDO</label>
+                  <input type="text" class="form-control" placeholder="Last name" id="apellidoRegistro">
+                </div>
+              </div>
+              <div class="form-group pt-3">
+                <label for="exampleInputEmail1" class="font-weight-bold"
+                  >MAIL</label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  id="exampleInputEmail1"
+                  placeholder="example@gmail.com"
+                  aria-describedby="emailHelp"
+                />
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1" class="font-weight-bold"
+                  >CONTRASEÑA</label
+                >
+                <input
+                  type="password"
+                  class="form-control"
+                  id="exampleInputPassword1"
+                />
+                <small>*Debe contener 8 o más caracteres</small>
+              </div>
             </div>
             <div class="form-group form-check"></div>
             <div class="d-flex justify-content-center">
               <button type="submit" class="btn btn-danger font-weight-bold">
-                INGRESAR
+                REGISTRAR
               </button>
             </div>
-            <p class="text-center p-4 font-weight-bold">
-              Aún no tienes una cuenta?
-              <a href="registroLogin.html"><b class="text-primary">Regístrate</b></a>
-            </p>
           </form>
         </div>
-        <br />
       </section>
-      <!--Fin Seccion Login -->
+      <!--Fin Seccion Registro -->
 
     </main>
 
