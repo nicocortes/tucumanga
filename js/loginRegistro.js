@@ -18,3 +18,10 @@ class Usuario{
     }
 }
 
+//Agregar usuarios
+
+const agregarUsuarios = function(){
+    if(nombre.value && apellido.value && mail.value && contraseña.value){
+        console.log('COMPLETO')
+    }
+}
