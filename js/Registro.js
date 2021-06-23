@@ -1,23 +1,24 @@
-let biblioteca=JSON.parse(localStorage.getItem('biblioteca')) || []
-// let bibliot={}
+//Traigo de localStorage los datos si los hay
+let biblioteca = JSON.parse(localStorage.getItem("biblioteca")) || [];
+let mangasTop = {}; 
 
+//Capturo cada elemento del formulario de registro
+titulo = document.querySelector("#titleText")
+descripcion = document.querySelector("#descripText")
+categoria = document.querySelector("#categText")
+autor = document.querySelector("#authorText")
+año = document.querySelector("#añoText")
+editorial = document.querySelector("#ediText")
+imagen = document.querySelector("#imgText")
+visitas = 0
 
-//elemento capturado en el formulario de registro
-let titulo = document.querySelector("#titleText")
-let descripcion = document.querySelector("#descripText")
-let categoria = document.querySelector("#categText")
-let autor = document.querySelector("#authorText")
-let año = document.querySelector("#añoText")
-let editorial= document.querySelector("#ediText")
-let imagen = document.querySelector("#imgText")
-// let visitas = 0
+//capturo el tbody de la tabla
+let cuerpoLib = document.querySelector("#IMGtotal") || ""
+let cuerpoLib2 = document.querySelector("#IMGtotal2") || ""
 
-//capturo los datos y se dirigen a la tabla
-let cuerpoLib = document.querySelector("#cuerpoLib") || ""
-
-//funcion constructora
-class Libreria{
-    constructor(titulo,descripcion,categoria,autor,año,editorial,imagen){
+//Creo la clase para crear las instancias de heroe
+class Libreria {
+    constructor(titulo, descripcion, categoria, autor, año, editorial, imagen, visitas) {
         this.titulo = titulo
         this.autor = autor
         this.categoria = categoria
@@ -25,28 +26,24 @@ class Libreria{
         this.editorial = editorial
         this.imagen = imagen
         this.descripcion = descripcion
-        // this.visitas = visitas
+        this.visitas = visitas
     }
 }
-
-
-//funcion agregar Libros
-const agregarLib = function(){
-    if(titulo.value && descripcion.value && categoria.value && autor.value && año.value && editorial.value && imagen.value){
-        if(!imagen.value){
+//Agregar heroes
+const agregarLib = function () {
+    if (titulo.value && descripcion.value && categoria.value && autor.value && año.value && editorial.value && imagen.value) {
+        if (!imagen.value) {
             imagen.value = "https://static.wikia.nocookie.net/la-bitacora-del-capitan/images/6/67/Not_found.png/revision/latest?cb=20190509042801&path-prefix=es"
         }
 
-        biblioteca.push(new Libreria(titulo.value,descripcion.value,categoria.value,autor.value,año.value,editorial.value,imagen.value))
-        localStorage.setItem("biblioteca",JSON.stringify(biblioteca))
+        biblioteca.push(new Libreria(titulo.value, descripcion.value, categoria.value, autor.value, año.value, editorial.value, imagen.value, visitas))
+        localStorage.setItem("biblioteca", JSON.stringify(biblioteca))
         updateLib()
-    }else{
+    } else {
         alert("faltan datos")
     }
 
 }
-
-//actualizar la pagina
 function updateLib(){
     titulo.value = ""
     descripcion.value = ""
@@ -57,90 +54,113 @@ function updateLib(){
     imagen.value = ""
 }
 
+//Tabla heroes
+function cargarManga(){
+    mangasTop = biblioteca
+    IMGtotal.innerHTML = "";
+    biblioteca = JSON.parse(localStorage.getItem("biblioteca")) || [];
+    biblioteca.forEach(function (libro, index) {
+        let fila = document.createElement("div");
+        fila.classList = "col-6 col-md-2 mt-4 mb-4 img-topm"
+        let datos = `    
+        <button  onclick='verManga(${index})'>
+    <img
+      src="${libro.imagen}"
+      alt=""
+      class="img-fluid"
+  /> 
+</button>
+  <div class="capa text-white text-center">
+    <h5></h5>
+  </div>
 
-//funcion cargarLib
-
-function cargarLib(){
-    cuerpoLib.innerHTML = ""
-    biblioteca = JSON.parse(localStorage.getItem("biblioteca")) || []
-    biblioteca.forEach(function(libro,index){
-        let fila = document.createElement("tr")
-        fila.classList = "text-center"
-        let info = `
-        <th scope="row">${libro.titulo}</th>
-        <td>${libro.categoria}</td>
-        <td>${libro.autor}</td>
-        <td>${libro.año}</td>
-        <td>${libro.editorial}</td>
-        <td><button class="btn btn-danger" onclick="borrarLib(${index})">X</button></td>
-        `
-        fila.innerHTML = info
-        cuerpoLib.appendChild(fila)
-        
+        `;
+        fila.innerHTML = datos;
+        IMGtotal.appendChild(fila);
     });
-
+    
 }
-//borrar libro
-function borrarLib(id){
-    libro = biblioteca[id]
-    let validar = confirm(`Esta seguro de que quiere eliminar a ${libro.titulo}`)
+function cargarManga2(){
+    IMGtotal2.innerHTML = "";
+    biblioteca = JSON.parse(localStorage.getItem("biblioteca")) || [];
+    biblioteca.forEach(function (libro, index) {
+        let fila = document.createElement("div");
+        fila.classList = "col-6 col-md-3 mt-4 mb-4 img-topm"
+        let datos = `    
+        <a href="./error404.html" 
+        ><img
+          src="${libro.imagen}"
+          alt=""
+          class="img-fluid"
+      /></a>
+      <div class="capa text-white text-center">
+        <h5></h5>
+      </div>
 
-    if(validar){
-        biblioteca.splice(id,1)
-        localStorage.setItem("biblioteca",JSON.stringify(biblioteca))
-        alert(`Se borro correctamente a ${libro.titulo}`)
-        cargarLib()
+        `;
+        fila.innerHTML = datos;
+        IMGtotal2.appendChild(fila);
+    });
+}
+
+//Posicion del top
+function positionTop(){
+    biblioteca.visitas = biblioteca.visitas + 1
+    localStorage.setItem('biblioteca',JSON.stringify(biblioteca))
+}
+
+// Mover la posicion del top
+function moverVisto(){
+    mangasTop = biblioteca
+    mangasTop.sort(function(b,a){
+        if(a.visitas > b.visitas){
+            return 1
+        }
+        if(a.visitas < b.visitas){
+            return -1
+        }
+        return 0
+    })
+}
+
+
+//Imprimir los datos del top
+function masVistos(){
+    mangasTop = biblioteca;
+    topTabla.innerHTML = "";
+    biblioteca = JSON.parse(localStorage.getItem("biblioteca")) || []
+    for (let i = 0; i < 5; i++) {
+
+        let colum = document.createElement("tr")
+        let info = `
+        <th scope="row ">${i + 1}</th>
+        <td>${mangasTop[i].titulo}</td>
+        <td>${mangasTop[i].visitas}</td> 
+        `
+        colum.innerHTML = info
+        topTabla.appendChild(colum) 
     }
-
-
 }
 
-//cantidad de contactos
-
-
-
-// //Posicion del top
-// function positionTop(){
-//     bibliot.visitas=bibliot.visitas + 1
-//     localStorage.setItem('biblioteca',JSON.stringify(biblioteca))
-// }
-
-// // Mover la posicion del top
-// function moverVisto(){
-//     bibliot = biblioteca
-//     bibliot.sort(function(b,a){
-//         if(a.visitas > b.visitas){
-//             return 1
-//         }
-//         if(a.visitas < b.visitas){
-//             return -1
-//         }
-//         return 0
-//     })
-// }
-
-
-// //Imprimir los datos del top
-// function masVistos(){
-//     topTabla.innerHTML = ""
-//     bibliot = biblioteca
-//     biblioteca = JSON.parse(localStorage.getItem("biblioteca")) || []
-//     bibliot.forEach(function(libro,index){
-//         let colum = document.createElement("tr")
-//         let info = `
-//         <th scope="row ">${index + 1}</th>
-//         <td>${libro.alias}</td>
-//         <td>${libro.visitas}</td> 
-//         `
-//         colum.innerHTML = info
-//         topTabla.appendChild(colum) 
-//     })
-// }
-
-
-//verificacion de tabla
-if(cuerpoLib){
-    cargarLib(biblioteca)
+if (cuerpoLib) {
+    cargarManga()
+    cargarManga2()
 }
-// moverVisto()
-// masVistos()
+if (cuerpoLib2) {
+    cargarManga2()
+    masVistos()
+}
+
+function masVistos2(){
+    mangasTop = biblioteca;
+    topTabla.innerHTML = "";
+    biblioteca = JSON.parse(localStorage.getItem("biblioteca")) || []
+    for (let i = 0; index < 6; index++) {
+
+        
+    }
+}
+for (let i = 0; index < 6; index++) {
+
+    marcar(mangasTop)
+}
