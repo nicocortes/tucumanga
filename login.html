@@ -63,7 +63,7 @@
         <br />
         <div class="container">
           <h1 class="text-center p-5">INICIA SESIÓN</h1>
-          <form class="container formulario">
+          <form onsubmit="handleSubmit(event)" class="container formulario">
             <div class="form-group">
               <label for="exampleInputEmail1" class="font-weight-bold"
                 >MAIL</label
@@ -72,6 +72,7 @@
                 type="email"
                 class="form-control"
                 id="exampleInputEmail1"
+                onchange="handleChange(event)"
                 placeholder="example@gmail.com"
                 aria-describedby="emailHelp"
               />
@@ -84,6 +85,7 @@
                 type="password"
                 class="form-control"
                 id="exampleInputPassword1"
+                onchange="handleChange(event)"
               />
             </div>
             <div class="form-group form-check"></div>
@@ -166,6 +168,7 @@
     </footer>
 
     <!--Fin footer-->
+    <script src="js/login.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
