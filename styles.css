@@ -82,3 +82,19 @@
     background-color: #1C1C1C;
     color: white;
 }
+
+/*About*/
+.img-avatarabout {
+ 
+  border: 2px solid rgb(255, 0, 0);
+  ;
+}
+
+.img-avatarabout:hover{
+  opacity: 0.5;
+}
+
+b{
+  color: rgb(255, 0, 0);
+
+}
