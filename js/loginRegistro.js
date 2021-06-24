@@ -33,6 +33,11 @@ const agregarUsuarios = function(e){
         )
         localStorage.setItem("usuariosKey", JSON.stringify(usuarios));
         updateDatos();
+        swal({
+            title: "Te registraste con éxito!",
+            text: "You clicked the button!",
+            icon: "success",
+          });
     }else{
         document.querySelector('#error').className = 'text-center small'
     }
