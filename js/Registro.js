@@ -73,15 +73,14 @@ function cargarManga(){
     for (let i = 0; i < 5; i++){
         let fila = document.createElement("div");
         fila.classList = "col-6 col-md-2 mt-4 mb-4 img-topm"
-        let datos = `  
-        <a href="busqueda.html">
+        let datos = `    
         <img
         src="${mangasTop[i].imagen}"
         alt=""
         class="img-fluid"
     />
-    </a>
     <div class="verMangaModal text-center">
+    <button class="btn font-weight-bold" onclick='verManga(${i})' >--Leer--</button>
     </div>
     <div class="capa text-white text-center">
       <h5>${mangasTop[i].titulo}</h5>
@@ -90,7 +89,6 @@ function cargarManga(){
         fila.innerHTML = datos;
         IMGtotal.appendChild(fila);
     }
-    
     
 }
 function cargarManga2(){
