@@ -1,7 +1,7 @@
 //Traigo de localStorage los datos si los hay
 let biblioteca = JSON.parse(localStorage.getItem("biblioteca")) || [];
 let mangasTop = {}; 
-
+let manga = {}
 
 //Capturo cada elemento del formulario de registro
 titulo = document.querySelector("#titleText")
@@ -57,31 +57,21 @@ function updateLib(){
 
 //Tabla mangas
 function cargarManga(){
-
+    mangasTop = biblioteca
+    moverVisto()
     IMGtotal.innerHTML = "";
-    mangasTop =  biblioteca.sort(function(b,a){
-        if(a.visitas > b.visitas){
-            return 1
-        }
-        if(a.visitas < b.visitas){
-            return -1
-        }
-        return 0
-    })
- 
     biblioteca = JSON.parse(localStorage.getItem("biblioteca")) || [];
     for (let i = 0; i < 5; i++){
         let fila = document.createElement("div");
         fila.classList = "col-6 col-md-2 mt-4 mb-4 img-topm"
-        let datos = `  
-        <a href="busqueda.html">
+        let datos = `    
         <img
         src="${mangasTop[i].imagen}"
         alt=""
         class="img-fluid"
     />
-    </a>
     <div class="verMangaModal text-center">
+    <button class="btn font-weight-bold" onclick='verManga(${i})' >--Leer--</button>
     </div>
     <div class="capa text-white text-center">
       <h5>${mangasTop[i].titulo}</h5>
@@ -90,7 +80,7 @@ function cargarManga(){
         fila.innerHTML = datos;
         IMGtotal.appendChild(fila);
     }
-    
+
     
 }
 function cargarManga2(){
@@ -115,33 +105,34 @@ function cargarManga2(){
         IMGtotal2.appendChild(fila);
     });
 }
-function verManga(id){
-    console.log(id)
-    mangasTop = biblioteca[id]
-    
-    document.querySelector('#TituloModal').innerText = mangasTop.titulo
-    document.querySelector('#tomo_Manga').src = mangasTop.imagen
-    document.querySelector('#text_autor').innerText = mangasTop.autor
-    document.querySelector('#text_categoti').innerText = mangasTop.categoria
-    document.querySelector('#text_Año').innerText = mangasTop.año
-    document.querySelector('#text_Editorial').innerText = mangasTop.editorial
-    document.querySelector('#text_Sinopsis').innerText=mangasTop.descripcion
-    
 
-    $('#verManga').modal("show")
-    positionTop()
-    masVistos()
-    
-    
-    
-
+//Posicion del top
+function positionTop(){
+  
+    manga.visitas = manga.visitas + 1
+    localStorage.setItem('biblioteca',JSON.stringify(biblioteca))
+    console.log(manga.visitas)
 }
+
+// Mover la posicion del top
+function moverVisto(){
+    manga = biblioteca
+    manga.sort(function(b,a){
+        if(a.visitas > b.visitas){
+            return 1
+        }
+        if(a.visitas < b.visitas){
+            return -1
+        }
+        return 0
+    })
+}
+
 
 //Imprimir los datos del top
 function masVistos(){
-    // moverVisto()
+    mangasTop = biblioteca;
     topTabla.innerHTML = "";
-    mangasTop = biblioteca
     biblioteca = JSON.parse(localStorage.getItem("biblioteca")) || []
     for (let i = 0; i < 5; i++) {
 
@@ -154,38 +145,32 @@ function masVistos(){
         colum.innerHTML = info
         topTabla.appendChild(colum) 
     }
-    
 }
-//Posicion del top
-function positionTop(){
-    
-    mangasTop.visitas = mangasTop.visitas + 1
-    localStorage.setItem('biblioteca',JSON.stringify(biblioteca))
-    console.log(mangaTop.visitas)
-}
-function moverVisto(){
-    mangasTop = biblioteca
-    mangasTop.sort(function(b,a){
-        if(a.visitas > b.visitas){
-            return 1
-        }
-        if(a.visitas < b.visitas){
-            return -1
-        }
-        return 0
-    })
-}
-
-
 
 if (cuerpoLib) {
     cargarManga()
-    moverVisto()
-    masVistos()
-    
+    cargarManga2()
 }
 if (cuerpoLib2) {
     cargarManga2()
-    
+    masVistos()
 }
+function verManga(id){
+    console.log(id)
+    manga=mangasTop[id]
+    document.querySelector('#TituloModal').innerText = manga.titulo
+    document.querySelector('#tomo_Manga').src = manga.imagen
+    document.querySelector('#text_autor').innerText = manga.autor
+    document.querySelector('#text_categoti').innerText = manga.categoria
+    document.querySelector('#text_Año').innerText = manga.año
+    document.querySelector('#text_Editorial').innerText = manga.editorial
+    document.querySelector('#text_Sinopsis').innerText=manga.descripcion
+    
 
+    $('#verManga').modal("show")
+    positionTop()
+    moverVisto()
+    masVistos()
+}
+moverVisto()
+masVistos()

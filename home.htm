@@ -387,8 +387,82 @@
         </div>
       </div>
     </footer>
-
     <!--Fin footer-->
+    <!-- Modal -->
+   <div
+   class="modal fade"
+   id="verManga"
+   tabindex="-1"
+   aria-labelledby="exampleModalLabel"
+   aria-hidden="true"
+ >
+   <div class="modal-dialog">
+     <div class="modal-content">
+       <div class="modal-header">
+         <h5 class="modal-title" id="TituloModal"></h5>
+         <button
+           type="button"
+           class="close"
+           data-dismiss="modal"
+           aria-label="Close"
+         >
+           <span aria-hidden="true">&times;</span>
+         </button>
+       </div>
+       <div class="modal-body">
+         <!-- Card -->
+         <div class="card mb-3" style="max-width: 540px;">
+          <div class="row no-gutters">
+            <div class="col-md-12">
+              <img id="tomo_Manga" src="" alt="">
+            </div>
+            <div class="col-md-12">
+              <div class="card-body">
+               
+                <p class="card-text">
+                  <strong>Autor: </strong><span id="text_autor"></span>
+                </p>
+                <p class="card-text">
+                  <strong>Categorias: </strong><span id="text_categoti"></span>
+                </p>
+                <p class="card-text">
+                  <strong>Año: </strong><span id="text_Año"></span>
+                </p>
+                <p class="card-text">
+                  <strong>Editorial: </strong><span id="text_Editorial"></span>
+                </p>
+                <p class="card-text">
+                  <strong>Sinopsis: </strong>
+                  <br>
+                  <span id="text_Sinopsis"></span>
+                  <br>
+                  <br>
+                </p>
+                <p class="card-text">
+                  <small class="text-muted" id="text_Small" ></small>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+         <!-- fin card -->
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-danger">Leer</button>
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-dismiss="modal"
+          >
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
     <script src="./js/Registro.js"></script>
 
     <script
