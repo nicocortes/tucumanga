@@ -4,15 +4,15 @@ let usuarios = JSON.parse(localStorage.getItem('usuariosKey')) || [];
 //Capturo cada elemento del formulario de registro
 let nombre = document.querySelector('#nombreRegistro');
 let apellido = document.querySelector('#apellidoRegistro');
-let mail = document.querySelector('#mailRegistro');
+let email = document.querySelector('#mailRegistro');
 let contraseña = document.querySelector('#passwordRegistro');
 
 //Creo la clase para crear las instancias de usuario
 class Usuario{
-    constructor(nombre, apellido, mail, contraseña){
+    constructor(nombre, apellido, email, contraseña){
         this.nombre = nombre,
         this.apellido = apellido,
-        this.mail = mail,
+        this.email = email,
         this.contraseña = contraseña,
         this.verificado = false
     }
@@ -22,20 +22,20 @@ class Usuario{
 
 const agregarUsuarios = function(e){
     e.preventDefault();
-    if(nombre.value && apellido.value && mail.value && contraseña.value.length>8){
+    if(nombre.value && apellido.value && email.value && contraseña.value.length>=8){
         usuarios.push(
             new Usuario(
                 nombre.value.toLowerCase(),
                 apellido.value.toLowerCase(),
-                mail.value,
+                email.value,
                 contraseña.value,
             )
         )
         localStorage.setItem("usuariosKey", JSON.stringify(usuarios));
         updateDatos();
         swal({
-            title: "Te registraste con éxito!",
-            text: "You clicked the button!",
+            title: "Registro completado",
+            text: "¡Te registraste con éxito!",
             icon: "success",
           });
     }else{
@@ -46,11 +46,11 @@ const agregarUsuarios = function(e){
 function updateDatos(){
     nombre.value = ""
     apellido.value = ""
-    mail.value = ""
+    email.value = ""
     contraseña.value = ""
     nombre.className = 'form-control'
     apellido.className = 'form-control'
-    mail.className = 'form-control'
+    email.className = 'form-control'
     contraseña.className = 'form-control'
 }
 
