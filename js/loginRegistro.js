@@ -38,6 +38,9 @@ const agregarUsuarios = function(e){
             text: "¡Te registraste con éxito!",
             icon: "success",
           });
+          setTimeout(()=>{
+            location.replace('/login.html')
+        },1500)
     }else{
         document.querySelector('#error').className = 'text-center small'
     }

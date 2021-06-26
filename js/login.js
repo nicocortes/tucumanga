@@ -66,7 +66,12 @@ const handleSubmit = function(e){
                   });
             }
         }else{
-            alert('Usuario o contraseña incorrectos')
+            swal({
+                title: "Oops!",
+                text: "Usuario o contraseña incorrectos",
+                icon: "error",
+                button: "ok",
+              });
         }
     }
     }
