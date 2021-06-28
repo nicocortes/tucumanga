@@ -34,8 +34,8 @@ const agregarUsuarios = function(e){
         localStorage.setItem("usuariosKey", JSON.stringify(usuarios));
         updateDatos();
         swal({
-            title: "Registro completado",
-            text: "¡Te registraste con éxito!",
+            title: "Genial!",
+            text: "Te registraste con éxito",
             icon: "success",
           });
           setTimeout(()=>{

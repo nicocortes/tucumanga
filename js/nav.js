@@ -17,4 +17,21 @@ function cambiarNav() {
   }
 }
 
+function navLogeado(){
+  if(usuarioLogeado.email && usuarioLogeado.contraseña){
+    let linkIS= document.querySelector('#iniciarSesion').className='d-none'
+    let linkCS= document.querySelector('#cierraSesion').className='nav-link'
+    console.log('Usuario log')
+  }else{
+    console.log('No hay un usuario log')
+  }
+}
+
+function cerrarSesion(){
+  localStorage.removeItem('usuario')
+}
+
+
+
 cambiarNav();
+navLogeado()
