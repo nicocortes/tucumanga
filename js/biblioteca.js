@@ -1,4 +1,4 @@
-
+let biblioteca = JSON.parse(localStorage.getItem("biblioteca")) || [];
 let manga = {};
 
 //Capturo cada elemento del formulario de registro
@@ -17,10 +17,12 @@ let cuerpoLib3 = document.querySelector("#IMGtotal3") || ""
 
 
 //Tabla heroes
-function cargarManga3(){
+function cargarManga3(Mangas){
+    
     IMGtotal3.innerHTML = "";
-    biblioteca = JSON.parse(localStorage.getItem("biblioteca")) || [];
-    biblioteca.forEach(function (libro, index) {
+    
+    // biblioteca = JSON.parse(localStorage.getItem("biblioteca")) || [];
+    Mangas.forEach(function (libro, index) {
         let fila = document.createElement("div");
         fila.classList = "col-6 col-md-4 col-lg-3 col-xl-2 mt-4 mb-4 img-topm"
         let datos = `    
@@ -29,6 +31,9 @@ function cargarManga3(){
       src="${libro.imagen}"
       alt=""
       class="img-fluid"
+      width="350px"
+      height="250px"
+      
   />
   <div class="verMangaModal text-center">
   <button class="btn font-weight-bold" onclick='verManga(${index})' >--Leer--</button>
@@ -41,6 +46,7 @@ function cargarManga3(){
         fila.innerHTML = datos ;
         IMGtotal3.appendChild(fila);
     });
+    
 }
 //Posicion del top
 function positionTop(){
@@ -74,10 +80,14 @@ function verManga(id){
     document.querySelector('#text_Año').innerText = manga.año
     document.querySelector('#text_Editorial').innerText = manga.editorial
     document.querySelector('#text_Sinopsis').innerText=manga.descripcion
+    document.querySelector('#urlDeTomo').innerText = manga.tomo 
+    document.querySelector('#demogText').innerText = manga.demografia
     positionTop()
-    moverVisto()
     $('#verManga').modal("show")
+    
 }
+
+
 
 // function verManga (index){
 //     mangas = biblioteca[index];
@@ -89,20 +99,177 @@ function verManga(id){
 //     document.querySelector("#text_Año").innerHTML = mangas.año;
 //     document.querySelector("#text_Editorial").innerHTML = mangas.editorial;
 //     document.querySelector("#text_Sinopsis").innerHTML = mangas.descripcion;
+//     document.querySelector('#urlDeTomo').innerText = mangas.tomo
 //     // document.querySelector("#text_Small").innerHTML = mangas.titulo;
 //     $("verManga").modal("show");
 //     positionTop()
 // }
 
+//---------------------------------------------------------------------------------------------------------------
+//BUSCADOR
+function filterBiblio(){
+    let texto = document.querySelector("#textBuscar");
+    Mangas = JSON.parse(localStorage.getItem("biblioteca"));
+
+    Mangas = Mangas.filter(function(manga){
+        return manga.titulo.indexOf(texto.value) > -1 ;
+    });
+    cargarManga3(Mangas)
+    verManga(Mangas)
+
+}
 
 
+// FILTRO DEMOGRAFIAS---------------------------------------
+function filterShonnen(){
+
+    let texto = ("Shonnen")
+    Mangas = JSON.parse(localStorage.getItem("biblioteca"));
+
+    Mangas = Mangas.filter(function(manga){
+        return manga.demografia.indexOf(texto) > -1 ;
+    });
+    cargarManga3(Mangas)
+    verManga(Mangas)
+
+}
+
+function filterSeinen(){
+
+    let texto = ("Seinen")
+    Mangas = JSON.parse(localStorage.getItem("biblioteca"));
+
+    Mangas = Mangas.filter(function(manga){
+        return manga.demografia.indexOf(texto) > -1 ;
+    });
+    cargarManga3(Mangas)
+    verManga(Mangas)
+
+}
+
+function filterShôjo(){
+
+    let texto = ("Shôjo")
+    Mangas = JSON.parse(localStorage.getItem("biblioteca"));
+
+    Mangas = Mangas.filter(function(manga){
+        return manga.demografia.indexOf(texto) > -1 ;
+    });
+    cargarManga3(Mangas)
+    verManga(Mangas)
+
+}
+function filterJosei(){
+
+    let texto = ("Josei")
+    Mangas = JSON.parse(localStorage.getItem("biblioteca"));
+
+    Mangas = Mangas.filter(function(manga){
+        return manga.demografia.indexOf(texto) > -1 ;
+    });
+    cargarManga3(Mangas)
+    verManga(Mangas)
+
+}
+function filterKodomo(){
+
+    let texto = ("Kodomo")
+    Mangas = JSON.parse(localStorage.getItem("biblioteca"));
+
+    Mangas = Mangas.filter(function(manga){
+        return manga.demografia.indexOf(texto) > -1 ;
+    });
+    cargarManga3(Mangas)
+    verManga(Mangas)
+
+}
+// FIN DE FILTRO DEMOGRAFIAS---------------------------------------
 
 
+//fitro categorias
+function filterAccion(){
+
+    let texto = ("Accion")
+    Mangas = JSON.parse(localStorage.getItem("biblioteca"));
+
+    Mangas = Mangas.filter(function(manga){
+        return manga.categoria.indexOf(texto) > -1 ;
+    });
+    cargarManga3(Mangas)
+    verManga(Mangas)
+
+}
+
+function filterDeporte(){
+
+    let texto = ("Deporte")
+    Mangas = JSON.parse(localStorage.getItem("biblioteca"));
+
+    Mangas = Mangas.filter(function(manga){
+        return manga.categoria.indexOf(texto) > -1 ;
+    });
+    cargarManga3(Mangas)
+    verManga(Mangas)
+
+}
+
+function filterRomance(){
+
+    let texto = ("Romance")
+    Mangas = JSON.parse(localStorage.getItem("biblioteca"));
+
+    Mangas = Mangas.filter(function(manga){
+        return manga.categoria.indexOf(texto) > -1 ;
+    });
+    cargarManga3(Mangas)
+    verManga(Mangas)
+
+}
+
+function filterTerror(){
+
+    let texto = ("Terror")
+    Mangas = JSON.parse(localStorage.getItem("biblioteca"));
+
+    Mangas = Mangas.filter(function(manga){
+        return manga.categoria.indexOf(texto) > -1 ;
+    });
+    cargarManga3(Mangas)
+    verManga(Mangas)
+
+}
+
+function filterSuspenso(){
+
+    let texto = ("Suspenso")
+    Mangas = JSON.parse(localStorage.getItem("biblioteca"));
+
+    Mangas = Mangas.filter(function(manga){
+        return manga.categoria.indexOf(texto) > -1 ;
+    });
+    cargarManga3(Mangas)
+    verManga(Mangas)
+
+}
 
 
+function filterMecha(){
 
+    let texto = ("Mecha")
+    Mangas = JSON.parse(localStorage.getItem("biblioteca"));
 
+    Mangas = Mangas.filter(function(manga){
+        return manga.categoria.indexOf(texto) > -1 ;
+    });
+    cargarManga3(Mangas)
+    verManga(Mangas)
+
+}
+
+//Fin de fitro categorias
+//---------------------------------------------------------------------------------------------------------------
 
 if (cuerpoLib3) {
-    cargarManga3()
+    cargarManga3(biblioteca)
+
 }

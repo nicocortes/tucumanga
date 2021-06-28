@@ -47,6 +47,7 @@
         <a class="navbar-brand" href="home.html"
           ><img src="img/logo.png" alt=""
         /></a>
+        <a href="/busqueda.html"><i class="fa fa-search fa-2x text-white mx-2" aria-hidden="true"></i></a>
       </nav>
     </header>
     <main>
@@ -54,12 +55,12 @@
       <section class="mt-4">
         <div class="container-fluid">
           <div class="row font-weight-bold">
-            <div class="col-12 col-md-9">
+            <div class="col-12 col-md-12 col-xl-9">
               <!-- Seccion Top -->
               <div class="container">
                 <div class="row">
                   <h5 class="mt-4 font-weight-bold titleHome text-white">
-                    Top
+                    Populares
                   </h5>
                 </div>
                 <div class="row" id="IMGtotal">
@@ -125,14 +126,14 @@
               <!-- Fin de Seccion Top -->
 
               <!-- Seccion Ultimas Subidas -->
-              <div class="container">
+              <div class="container mt-4">
                 <div class="row">
                   <h5 class="mt-4 font-weight-bold titleHome text-white">
                     Ultimos Ingresos
                   </h5>
                 </div>
 
-                <div class="row font-weight-bold" id="IMGtotal2">
+                <div class="row font-weight-bold mb-4" id="IMGtotal2">
                   <!-- <div class="col-6 col-md-3 mt-4 mb-4 img-topm">
                     <a href="./error404.html"
                       ><img
@@ -222,35 +223,28 @@
                       <h5></h5>
                     </div>
                   </div> -->
+                  
                 </div>
+                <br><br><br>
               </div>
               <!-- Fin de Seccion Ultimas subidas -->
             </div>
 
             <!-- Seccion Tablas -->
-            <div class="col-12 col-md-3">
+            <div class="col-12 col-md-12 col-xl-3 mb-4">
               <div class="container-fluid">
                 <!-- Boton subir archivo -->
-                <div class="row">
-                  <div class="col-12 mt-4 mb-4">
-                    <div>
-                      <h3
-                        class="top-title-table text-center pb-2 pt-2 text-white"
-                      >
-                        Top Mas vistos
-                      </h3>
-                    </div>
-                    <table class="table table-bordered">
-                      <thead>
-                        <tr>
-                          <th scope="col">#</th>
-                          <th scope="col">Los mas vistos</th>
-                        </tr>
-                      </thead>
-                      <tbody id="topTabla"></tbody>
-                    </table>
-                  </div>
+                <div class="container">
+                  <div class="row text-white text-center top-title-table mb-3">
+                  <div class="col-12 pb-1 pt-1"><h3>Top Mas vistos</h3></div>
+                    
                 </div>
+                <div class="row text-white  titleHPopular">
+                  <div class="col-2 pb-1 pt-1"><h3>#</h3></div>
+                  <div class="col-10 pb-1 pt-1"><h3>Popular</h3></div>
+                </div>
+              </div>
+                <div class="container-fluid" id="topTabla"></div>
                 <!-- <div class="row">
                   <div class="col-12">
                     <button class="btn btn-irRegistro btn-block pt-3 pb-3 font-weight-bold">
@@ -326,9 +320,10 @@
         </div>
       </section>
       <!--  Fin de Secciones  -->
+      
     </main>
     <!--Footer-->
-    <footer class="footer-pagina">
+    <footer class="footer-pagina mt-4">
       <div class="container">
         <div class="row text-center mt-2">
           <div class="col-12 col-md-4 mb-2 pb-4 mx-auto">
@@ -387,16 +382,19 @@
         </div>
       </div>
     </footer>
+
     <!--Fin footer-->
+
+
     <!-- Modal -->
    <div
-   class="modal fade"
+   class="modal fade bd-example-modal-xl"
    id="verManga"
    tabindex="-1"
    aria-labelledby="exampleModalLabel"
    aria-hidden="true"
  >
-   <div class="modal-dialog">
+   <div class="modal-dialog modal-xl">
      <div class="modal-content">
        <div class="modal-header">
          <h5 class="modal-title" id="TituloModal"></h5>
@@ -411,19 +409,22 @@
        </div>
        <div class="modal-body">
          <!-- Card -->
-         <div class="card mb-3" style="max-width: 540px;">
-          <div class="row no-gutters">
-            <div class="col-md-12">
+         <div class="card mb-3" >
+          <div class="row">
+            <div class="col-md-5">
               <img id="tomo_Manga" src="" alt="">
             </div>
-            <div class="col-md-12">
-              <div class="card-body">
+            <div class="col-md-7">
+              <div class="card-body-modal">
                
-                <p class="card-text">
+                <p class="card-text mt-4">
                   <strong>Autor: </strong><span id="text_autor"></span>
                 </p>
                 <p class="card-text">
-                  <strong>Categorias: </strong><span id="text_categoti"></span>
+                  <strong>Demografia: </strong><span id="demogText"></span>
+                </p>
+                <p class="card-text">
+                  <strong>Categoria: </strong><span id="text_categoti"></span>
                 </p>
                 <p class="card-text">
                   <strong>Año: </strong><span id="text_Año"></span>
@@ -431,12 +432,19 @@
                 <p class="card-text">
                   <strong>Editorial: </strong><span id="text_Editorial"></span>
                 </p>
+                
                 <p class="card-text">
                   <strong>Sinopsis: </strong>
                   <br>
                   <span id="text_Sinopsis"></span>
                   <br>
                   <br>
+                </p>
+                <p class="card-text">
+                  <strong>Tomo 1: </strong>
+                </p>
+                <p>
+                  <a href="" id="urlDeTomo"></a>
                 </p>
                 <p class="card-text">
                   <small class="text-muted" id="text_Small" ></small>
@@ -448,7 +456,8 @@
          <!-- fin card -->
         </div>
         <div class="modal-footer">
-          <button class="btn btn-danger">Leer</button>
+        
+  
           <button
             type="button"
             class="btn btn-secondary"
@@ -460,10 +469,15 @@
       </div>
     </div>
   </div>
+  <!-- fin modal -->
+
+
+
 
 
 
     <script src="./js/Registro.js"></script>
+    <script src="./js/biblioteca.js"></script>
 
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

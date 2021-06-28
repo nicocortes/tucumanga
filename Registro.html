@@ -40,14 +40,20 @@
     </header>
 
 <main>
-  <div class="container text-white">
+  <div class="container-fluid ">
     <div class="row">
-        <div class="cardLib col-12">
+      
+      <div class="col-12 col-lg-6">
+        <div class="container-fluid text-white">
+          <div class="row">
+            <div class="cardLib col-12">
           <div class="cardLib-header">
             <h1 class="card-titleLib text-center mb-4">NUEVA PUBLICACIÓN</h1>
             <br>
           </div>
           <div class="card-bodyLib">
+            <form class="needs-validation"
+            novalidate>
             <div class="row">
               <div class="form-group col-lg-6 col-md-12">
                 <label>TITULO</label>
@@ -71,13 +77,23 @@
             </div>
             <div class="row">
               <div class="form-group col-lg-6 col-md-12">
-                <label>CATEGORIA</label>
-                <input
-                  type="text"
-                  class="form-control mb-4"
-                  id="categText"
-                  required
-                />
+                <div class="form-group">
+                  <label>Demografia</label>
+                  <select
+                    class="form-control"
+                    id="demogText"
+                    required
+                  > 
+                    
+                    <option value="Shonnen">Shonnen</option>
+                    <option value="Seinen">Seinen</option>
+                    <option value="Shôjo">Shôjo</option>
+                    <option value="Josei">Josei</option>
+                    <option value="Kodomo">Kodomo</option>
+                  
+                  </select>
+                </div>
+
               </div>
               <div class="form-group col-lg-6 col-md-12">
                 <label>AÑO</label>
@@ -92,26 +108,56 @@
 
             <div class="row">
               <div class="form-group col-lg-6 col-md-12">
-                <label>EDITORIAL</label>
-                <input
-                  type="text"
-                  class="form-control mb-4"
-                  id="ediText"
-                  required
-                />
+                <div class="form-group">
+                  <label>CATEGORIA</label>
+                  <select
+                    class="form-control"
+                    id="categText"
+                    required
+                  > 
+                    <option value="Accion">Accion</option>
+                    <option value="Deporte">Deporte</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Terror">Terror</option>
+                    <option value="Suspenso">Suspenso</option>
+                    <option value="Mecha">Mecha</option>
+                  </select>
+                </div>
               </div>
               <div class="form-group col-lg-6 col-md-12">
                 <label>IMAGEN (url)</label>
                 <input
                   type="text"
-                  class="form-control mb-4"
+                  class="form-control mb-2"
                   id="imgText"
                   required
                 />
               </div>
             </div>
+            <div class="row">
+              <div class="form-group col-lg-6 col-md-12">
+                <label>EDITORIAL</label>
+                <input
+                  type="text"
+                  class="form-control mb-2"
+                  id="ediText"
+                  required
+                />
+              </div>
+              <div class="form-group col-lg-6 col-md-12">
+              <label>TOMO 1 <small>(Tiene que pegar el link del pdf.)</small> </label>
+              <input
+                type="text"
+                class="form-control mb-4"
+                id="urlTomo"
+                required
+              />
+              
+              </div>
+            </div>
+
             <div class="form-group mb-4">
-              <label>CONTRAPORTADA (breve descripcion)</label>
+              <label>CONTRAPORTADA <small>(breve descripcion)</small></label>
               <input
                 type="text"
                 class="form-control mb-4"
@@ -124,8 +170,36 @@
             <button class="btn btn-danger btn-block font-weight-bold" onclick="agregarLib()">
               ENVIAR
             </button>
+          </form>
           </div>
         </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-6 bg-white">
+        <div class="container-fluid bg-white">
+          <div class="row">
+           <div class="col-12">
+             <br><br><br><br><br>
+             <div class="text-center">
+              <form>
+                <div class="row">
+                  <h1>PARA ENVIAR SU PDF/ARCHIVO COMO LINK, MIRE EL VIDEO</h1>
+                </div>
+                <div>
+                  <iframe width="100%" height="530px" src="https://www.youtube.com/embed/sWYnrA7z1GI?list=LL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+              </form>
+            </div>
+           </div>
+
+            
+          </div>
+        </div>
+      </div>
+        
 
 
         <div class="row">
@@ -133,7 +207,7 @@
         </div>
 
       <!--  -->
-      <!-- <script>
+      <script>
         // Example starter JavaScript for disabling form submissions if there are invalid fields
         (function () {
           "use strict";
@@ -164,7 +238,7 @@
             false
           );
         })();
-      </script> -->
+      </script> 
       <!--  -->
     </div>
   </div>

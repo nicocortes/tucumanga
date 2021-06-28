@@ -2,7 +2,6 @@
 let biblioteca = JSON.parse(localStorage.getItem("biblioteca")) || [];
 let mangasTop = {}; 
 
-
 //Capturo cada elemento del formulario de registro
 titulo = document.querySelector("#titleText")
 descripcion = document.querySelector("#descripText")
@@ -11,6 +10,8 @@ autor = document.querySelector("#authorText")
 año = document.querySelector("#añoText")
 editorial = document.querySelector("#ediText")
 imagen = document.querySelector("#imgText")
+demografia = document.querySelector('#demogText')
+tomo = document.querySelector("#urlTomo")
 visitas = 0
 
 //capturo el tbody de la tabla
@@ -19,25 +20,27 @@ let cuerpoLib2 = document.querySelector("#IMGtotal2") || ""
 
 //Creo la clase para crear las instancias de heroe
 class Libreria {
-    constructor(titulo, descripcion, categoria, autor, año, editorial, imagen, visitas) {
+    constructor(titulo, descripcion, categoria, autor, año, editorial, imagen,tomo,demografia,visitas) {
         this.titulo = titulo
         this.autor = autor
         this.categoria = categoria
         this.año = año
+        this.demografia = demografia
         this.editorial = editorial
         this.imagen = imagen
+        this.tomo = tomo
         this.descripcion = descripcion
         this.visitas = visitas
     }
 }
 //Agregar heroes
 const agregarLib = function () {
-    if (titulo.value && descripcion.value && categoria.value && autor.value && año.value && editorial.value && imagen.value) {
+    if (titulo.value && descripcion.value && autor.value && año.value && editorial.value && imagen.value && tomo.value && demografia.value) {
         if (!imagen.value) {
             imagen.value = "https://static.wikia.nocookie.net/la-bitacora-del-capitan/images/6/67/Not_found.png/revision/latest?cb=20190509042801&path-prefix=es"
         }
 
-        biblioteca.push(new Libreria(titulo.value, descripcion.value, categoria.value, autor.value, año.value, editorial.value, imagen.value, visitas))
+        biblioteca.push(new Libreria(titulo.value, descripcion.value, categoria.value, autor.value, año.value, editorial.value, imagen.value, tomo.value, demografia.value,visitas))
         localStorage.setItem("biblioteca", JSON.stringify(biblioteca))
         updateLib()
     } else {
@@ -48,16 +51,15 @@ const agregarLib = function () {
 function updateLib(){
     titulo.value = ""
     descripcion.value = ""
-    categoria.value = ""
     autor.value = ""
     año.value = ""
     editorial.value = ""
     imagen.value = ""
+    tomo.value = ""
 }
 
 //Tabla mangas
 function cargarManga(){
-
     IMGtotal.innerHTML = "";
     mangasTop =  biblioteca.sort(function(b,a){
         if(a.visitas > b.visitas){
@@ -68,16 +70,16 @@ function cargarManga(){
         }
         return 0
     })
- 
     biblioteca = JSON.parse(localStorage.getItem("biblioteca")) || [];
     for (let i = 0; i < 5; i++){
         let fila = document.createElement("div");
-        fila.classList = "col-6 col-md-2 mt-4 mb-4 img-topm"
+        fila.classList = "col-6 col-md-3 col-xl-2 mt-4 mb-4 img-topm"
         let datos = `    
         <img
         src="${mangasTop[i].imagen}"
         alt=""
-        class="img-fluid"
+        width="100%"
+        height="100%"
     />
     <div class="verMangaModal text-center">
     <button class="btn font-weight-bold" onclick='verManga(${i})' >--Leer--</button>
@@ -89,34 +91,43 @@ function cargarManga(){
         fila.innerHTML = datos;
         IMGtotal.appendChild(fila);
     }
-    
 }
 function cargarManga2(){
     IMGtotal2.innerHTML = "";
     biblioteca = JSON.parse(localStorage.getItem("biblioteca")) || [];
     biblioteca.forEach(function (libro, index) {
         let fila = document.createElement("div");
-        fila.classList = "col-6 col-md-3 mt-4 mb-4 img-topm"
+        fila.classList = "col-6 col-md-3 col-xl-3  mt-4 mb-4 img-topm"
         let datos = `    
-        <a href="./error404.html" 
-        ><img
+        <img
           src="${libro.imagen}"
           alt=""
-          class="img-fluid"
-      /></a>
-      <div class="capa text-white text-center">
-        <h5></h5>
+          width="100%"
+          height="100%"
+      />
+      <div class="verMangaModal text-center">
+      <button class="btn font-weight-bold" onclick='verManga(${index})' >--Leer--</button>
       </div>
-
+      <div class="capa text-white text-center">
+        <h5>${libro.titulo}</h5>
+      </div>
         `;
         fila.innerHTML = datos;
         IMGtotal2.appendChild(fila);
     });
 }
+
 function verManga(id){
     console.log(id)
-    mangasTop = biblioteca[id]
-    
+    mangasTop = biblioteca.sort(function(b,a){
+        if(a.visitas > b.visitas){
+            return 1
+        }
+        if(a.visitas < b.visitas){
+            return -1
+        }
+        return 0
+    })[id]
     document.querySelector('#TituloModal').innerText = mangasTop.titulo
     document.querySelector('#tomo_Manga').src = mangasTop.imagen
     document.querySelector('#text_autor').innerText = mangasTop.autor
@@ -124,16 +135,14 @@ function verManga(id){
     document.querySelector('#text_Año').innerText = mangasTop.año
     document.querySelector('#text_Editorial').innerText = mangasTop.editorial
     document.querySelector('#text_Sinopsis').innerText=mangasTop.descripcion
-    
-
+    document.querySelector('#urlDeTomo').innerText=mangasTop.tomo
+    document.querySelector('#demogText').innerText = mangasTop.demografia
     $('#verManga').modal("show")
     positionTop()
     masVistos()
-    
-    
-    
-
 }
+ 
+
 
 //Imprimir los datos del top
 function masVistos(){
@@ -142,21 +151,27 @@ function masVistos(){
     mangasTop = biblioteca
     biblioteca = JSON.parse(localStorage.getItem("biblioteca")) || []
     for (let i = 0; i < 5; i++) {
-
-        let colum = document.createElement("tr")
+        let colum = document.createElement("div")
+        colum.classList = "row"
         let info = `
-        <th scope="row ">${i + 1}</th>
-        <td>${mangasTop[i].titulo}</td>
-        <td>${mangasTop[i].visitas}</td> 
+        <div class="text-white col-2">
+        <h5> ${i + 1}</h5>
+        </div>
+        <div class="text-white col-8">
+        <h5>${mangasTop[i].titulo}</h5>
+        </div>
+        <div class="text-white col-2">
+        <h5> ${mangasTop[i].visitas}</h5>
+        </div>
+        
+         
         `
         colum.innerHTML = info
         topTabla.appendChild(colum) 
     }
-    
 }
 //Posicion del top
 function positionTop(){
-    
     mangasTop.visitas = mangasTop.visitas + 1
     localStorage.setItem('biblioteca',JSON.stringify(biblioteca))
     console.log(mangaTop.visitas)
@@ -173,17 +188,11 @@ function moverVisto(){
         return 0
     })
 }
-
-
-
 if (cuerpoLib) {
     cargarManga()
     moverVisto()
     masVistos()
-    
 }
 if (cuerpoLib2) {
     cargarManga2()
-    
 }
-
