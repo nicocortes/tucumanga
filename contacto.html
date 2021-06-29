@@ -16,7 +16,7 @@
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg navbar-dark fondoNav">
+      <nav id="nav" class="navbar navbar-expand-lg navbar-dark fondoNav">
         <button
           class="navbar-toggler"
           type="button"
@@ -30,14 +30,15 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-link" href="login.html"
-              ><i class="fa fa-sign-in" aria-hidden="true"></i> INICIA SESIÓN<span class="sr-only"
-                >(current)</span
-              ></a
-            >
-            <a class="nav-link" href="home.html">INICIO</a>
-            <a class="nav-link" href="busqueda.html">BIBLIOTECA</a>
-            <a class="nav-link active" href="contacto.html" tabindex="-1">CONTACTO</a>
+            
+            <a class="nav-link" id="iniciarSesion" href="login.html"
+              ><i class="fa fa-sign-in" aria-hidden="true"></i> INICIA SESIÓN</a>
+            <a class="d-none" id="cierraSesion" href="login.html" onclick="cerrarSesion()"
+              ><i class="fa fa-sign-in" aria-hidden="true"></i> CERRAR SESIÓN</a>
+            <a class="nav-link"  href="home.html">INICIO</a>
+            <a class="nav-link"  href="busqueda.html">BIBLIOTECA</a>
+            <a class="nav-link active"  href="contacto.html">CONTACTO</a>
+            <a class="d-none" id="admin" href="Registro.html">ADMINISTRACIÓN</a>
           </div>
         </div>
         <a class="navbar-brand" href="home.html"><img src="img/logo.png" alt="" /></a>
@@ -160,6 +161,7 @@
     </footer>
 
     <!--Fin footer-->
+    <script src="js/nav.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

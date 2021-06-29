@@ -12,10 +12,6 @@
       integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
       crossorigin="anonymous"
     />
-    <link
-      rel="stylesheet"
-      href="path/to/font-awesome/css/font-awesome.min.css"
-    />
     <!-- Tipografía Montserrat -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -27,7 +23,7 @@
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg navbar-dark fondoNav">
+      <nav id="nav" class="navbar navbar-expand-lg navbar-dark fondoNav">
         <button
           class="navbar-toggler"
           type="button"
@@ -41,18 +37,18 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-link active" href="login.html"
-              ><i class="fa fa-sign-in" aria-hidden="true"></i> INICIA
-              SESIÓN<span class="sr-only">(current)</span></a
-            >
-            <a class="nav-link" href="home.html">INICIO</a>
-            <a class="nav-link" href="busqueda.html">BIBLIOTECA</a>
-            <a class="nav-link" href="contacto.html" tabindex="-1">CONTACTO</a>
+            
+            <a class="nav-link" id="iniciarSesion" href="login.html"
+              ><i class="fa fa-sign-in" aria-hidden="true"></i> INICIA SESIÓN</a>
+            <a class="d-none" id="cierraSesion" href="login.html" onclick="cerrarSesion()"
+              ><i class="fa fa-sign-in" aria-hidden="true"></i> CERRAR SESIÓN</a>
+            <a class="nav-link"  href="home.html">INICIO</a>
+            <a class="nav-link"  href="busqueda.html">BIBLIOTECA</a>
+            <a class="nav-link"  href="contacto.html">CONTACTO</a>
+            <a class="d-none" id="admin" href="Registro.html">ADMINISTRACIÓN</a>
           </div>
         </div>
-        <a class="navbar-brand" href="home.html"
-          ><img src="img/logo.png" alt="logo"
-        /></a>
+        <a class="navbar-brand" href="home.html"><img src="img/logo.png" alt="" /></a>
       </nav>
     </header>
 
@@ -62,15 +58,17 @@
       <section>
         <div class="container">
           <h1 class="text-center p-5">REGÍSTRATE</h1>
-          <form class="container registroLogin">
+
+          <p class="d-none" id="error">*Todos los campos son obligatorios</p>
+          <form class="container registroLogin" onsubmit="agregarUsuarios(event)">
             <div class="row">
                 <div class="col">
                     <label for="nombreRegistro" class="font-weight-bold">NOMBRE</label>
-                  <input type="text" class="form-control" placeholder="First name" id="nombreRegistro">
+                  <input onblur="validarGeneral(this)" type="text" class="form-control" placeholder="First name" id="nombreRegistro">
                 </div>
                 <div class="col">
                     <label for="apellidoRegistro" class="font-weight-bold">APELLIDO</label>
-                  <input type="text" class="form-control" placeholder="Last name" id="apellidoRegistro">
+                  <input onblur="validarGeneral(this)" type="text" class="form-control" placeholder="Last name" id="apellidoRegistro">
                 </div>
               </div>
               <div class="form-group pt-3">
@@ -78,6 +76,7 @@
                   >MAIL</label
                 >
                 <input
+                onblur="validarGeneral(this)"
                   type="email"
                   class="form-control"
                   id="mailRegistro"
@@ -90,6 +89,7 @@
                   >CONTRASEÑA</label
                 >
                 <input
+                onblur="validarContraseña(this)"
                   type="password"
                   class="form-control"
                   id="passwordRegistro"
@@ -173,6 +173,11 @@
 
     <!--Fin footer-->
     <script src="js/loginRegistro.js"></script>
+   
+    <!-- Sweetalert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="js/nav.js"></script>
+
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
