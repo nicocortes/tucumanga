@@ -177,3 +177,10 @@ textarea.form-control::placeholder {
   background-image: linear-gradient(to right top, #ff0000, #fa4500, #f56300, #f07a00, #eb8d12);
   color: white;
 }
+
+
+.administManga{
+  background-image: linear-gradient(to right top, #ff0000, #fa4500, #f56300, #f07a00, #eb8d12);
+  color: rgb(0, 0, 0);
+  border-radius: 7px;
+}

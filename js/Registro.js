@@ -18,7 +18,7 @@ visitas = 0
 let cuerpoLib = document.querySelector("#IMGtotal") || ""
 let cuerpoLib2 = document.querySelector("#IMGtotal2") || ""
 
-//Creo la clase para crear las instancias de heroe
+//Creo la clase para crear las instancias del manga
 class Libreria {
     constructor(titulo, descripcion, categoria, autor, año, editorial, imagen,tomo,demografia,visitas) {
         this.titulo = titulo
@@ -33,7 +33,7 @@ class Libreria {
         this.visitas = visitas
     }
 }
-//Agregar heroes
+//Agregar manga
 const agregarLib = function () {
     if (titulo.value && descripcion.value && autor.value && año.value && editorial.value && imagen.value && tomo.value && demografia.value) {
         if (!imagen.value) {
@@ -59,38 +59,42 @@ function updateLib(){
 }
 
 //Tabla mangas
-function cargarManga(){
+function cargarManga(Mangas){
     IMGtotal.innerHTML = "";
-    mangasTop =  biblioteca.sort(function(b,a){
-        if(a.visitas > b.visitas){
-            return 1
-        }
-        if(a.visitas < b.visitas){
-            return -1
-        }
-        return 0
-    })
-    biblioteca = JSON.parse(localStorage.getItem("biblioteca")) || [];
-    for (let i = 0; i < 5; i++){
-        let fila = document.createElement("div");
-        fila.classList = "col-6 col-md-3 col-xl-2 mt-4 mb-4 img-topm"
-        let datos = `    
-        <img
-        src="${mangasTop[i].imagen}"
-        alt=""
-        width="100%"
-        height="100%"
-    />
-    <div class="verMangaModal text-center">
-    <button class="btn font-weight-bold" onclick='verManga(${i})' >--Leer--</button>
-    </div>
-    <div class="capa text-white text-center">
-      <h5>${mangasTop[i].titulo}</h5>
-    </div>
+    moverVisto()
+  biblioteca = JSON.parse(localStorage.getItem("biblioteca"));
+   //traigo de nuevo la biblioteca para sacar el indice
+  Mangas.forEach(function (libro, index) {
+    //variable indice donde obtengo la posicion del libro seleccionado
+    let indice = biblioteca.findIndex(function (item) {
+      return item.titulo === libro.titulo;
+    });
+
+    console.log(indice);
+    let fila = document.createElement("div");
+    fila.classList = "col-6 col-md-4 col-lg-3 col-xl-2 mt-4 mb-4 img-topm";
+    let datos = `    
+       
+    <img
+      src="${libro.imagen}"
+      alt=""
+      class="img-fluid"
+      width="350px"
+      height="250px"
+      
+  />
+  <div class="verMangaModal text-center">
+  <button class="btn font-weight-bold" onclick='verManga(${indice})' >--Leer--</button>
+  </div>
+  <div class="capa text-white text-center">
+    <h6>${libro.titulo}</h6>
+  </div>
+
         `;
-        fila.innerHTML = datos;
-        IMGtotal.appendChild(fila);
-    }
+    fila.innerHTML = datos;
+    IMGtotal.appendChild(fila);
+  });
+  
 }
 function cargarManga2(){
     IMGtotal2.innerHTML = "";
@@ -106,7 +110,7 @@ function cargarManga2(){
           height="100%"
       />
       <div class="verMangaModal text-center">
-      <button class="btn font-weight-bold" onclick='verManga(${index})' >--Leer--</button>
+      <button class="btn font-weight-bold" onclick='verManga(${index})'>--Leer--</button>
       </div>
       <div class="capa text-white text-center">
         <h5>${libro.titulo}</h5>
@@ -119,15 +123,7 @@ function cargarManga2(){
 
 function verManga(id){
     console.log(id)
-    mangasTop = biblioteca.sort(function(b,a){
-        if(a.visitas > b.visitas){
-            return 1
-        }
-        if(a.visitas < b.visitas){
-            return -1
-        }
-        return 0
-    })[id]
+    mangasTop = biblioteca[id]
     document.querySelector('#TituloModal').innerText = mangasTop.titulo
     document.querySelector('#tomo_Manga').src = mangasTop.imagen
     document.querySelector('#text_autor').innerText = mangasTop.autor
@@ -187,9 +183,10 @@ function moverVisto(){
         }
         return 0
     })
+    console.log(mangasTop)
 }
 if (cuerpoLib) {
-    cargarManga()
+    cargarManga(biblioteca)
     moverVisto()
     masVistos()
 }
