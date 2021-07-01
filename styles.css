@@ -180,6 +180,24 @@ textarea.form-control::placeholder {
 
 /* Fin de contacto */
 
+/* Error 404 */
+.error-title {
+  text-align: center;
+  font-size: 180px;
+}
+
+#error-body {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(146, 146, 146);
+  height: 100vh;
+}
+
+#error-main {
+  height: 100%;
+}
+/* Fin de Error 404 */
+
 /* Sección footer */
 .footer-pagina {
   margin-top: 50px;
@@ -191,16 +209,13 @@ textarea.form-control::placeholder {
 
 /*About*/
 .img-avatarabout {
- 
   border: 2px solid rgb(255, 0, 0);
-  ;
 }
 
-.img-avatarabout:hover{
+.img-avatarabout:hover {
   opacity: 0.5;
 }
 
-b{
+b {
   color: rgb(255, 0, 0);
-
 }
