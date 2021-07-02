@@ -43,34 +43,29 @@ const agregarLib = function () {
 
         biblioteca.push(new Libreria(titulo.value, descripcion.value, categoria.value, autor.value, año.value, editorial.value, imagen.value, tomo.value, demografia.value,visitas))
         localStorage.setItem("biblioteca", JSON.stringify(biblioteca))
-        updateLib()
+        
     } else {
         alert("faltan datos")
     }
 
 }
-function updateLib(){
-    titulo.value = ""
-    descripcion.value = ""
-    autor.value = ""
-    año.value = ""
-    editorial.value = ""
-    imagen.value = ""
-    tomo.value = ""
-}
+
 
 //Tabla mangas
 function cargarManga(Mangas){
     IMGtotal.innerHTML = "";
     moverVisto()
   biblioteca = JSON.parse(localStorage.getItem("biblioteca"));
+  mangasTop = biblioteca
    //traigo de nuevo la biblioteca para sacar el indice
-  Mangas.forEach(function (libro, index) {
+   let vuelta = 0
+   Mangas.forEach(function (libro, index)  {
     //variable indice donde obtengo la posicion del libro seleccionado
+   
+    if (vuelta < 5){
     let indice = biblioteca.findIndex(function (item) {
       return item.titulo === libro.titulo;
     });
-
     console.log(indice);
     let fila = document.createElement("div");
     fila.classList = "col-6 col-md-4 col-lg-3 col-xl-2 mt-4 mb-4 img-topm";
@@ -80,8 +75,7 @@ function cargarManga(Mangas){
       src="${libro.imagen}"
       alt=""
       class="img-fluid"
-      width="350px"
-      height="250px"
+      
       
   />
   <div class="verMangaModal text-center">
@@ -94,9 +88,13 @@ function cargarManga(Mangas){
         `;
     fila.innerHTML = datos;
     IMGtotal.appendChild(fila);
-  });
+    vuelta++
+  };
   
+})
 }
+  
+
 function cargarManga2(){
     IMGtotal2.innerHTML = "";
     biblioteca = JSON.parse(localStorage.getItem("biblioteca")) || [];
@@ -107,8 +105,7 @@ function cargarManga2(){
         <img
           src="${libro.imagen}"
           alt=""
-          width="100%"
-          height="100%"
+          class="img-fluid"
       />
       <div class="verMangaModal text-center">
       <button class="btn font-weight-bold" onclick='verManga(${index})'>--Leer--</button>
@@ -132,6 +129,7 @@ function verManga(id){
     document.querySelector('#text_Año').innerText = mangasTop.año
     document.querySelector('#text_Editorial').innerText = mangasTop.editorial
     document.querySelector('#text_Sinopsis').innerText=mangasTop.descripcion
+    document.querySelector('#urlDeTomo').href=mangasTop.tomo
     document.querySelector('#urlDeTomo').innerText=mangasTop.tomo
     document.querySelector('#demogText').innerText = mangasTop.demografia
     $('#verManga').modal("show")
