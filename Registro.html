@@ -3,10 +3,7 @@
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <!-- Bootstrap CSS -->
     <link
@@ -21,7 +18,6 @@
     <title>Tucumanga</title>
   </head>
   <body class="fondo-registro">
-
     <header>
       <nav id="nav" class="navbar navbar-expand-lg navbar-dark fondoNav">
         <button
@@ -37,14 +33,15 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            
             <a class="nav-link" id="iniciarSesion" href="login.html"
-              ><i class="fa fa-sign-in" aria-hidden="true"></i> INICIA SESIÓN</a>
+              ><i class="fa fa-sign-in" aria-hidden="true"></i> INICIA SESIÓN</a
+            >
             <a class="d-none" id="cierraSesion" href="login.html" onclick="cerrarSesion()"
-              ><i class="fa fa-sign-in" aria-hidden="true"></i> CERRAR SESIÓN</a>
-            <a class="nav-link"  href="home.html">INICIO</a>
-            <a class="nav-link"  href="busqueda.html">BIBLIOTECA</a>
-            <a class="nav-link"  href="contacto.html">CONTACTO</a>
+              ><i class="fa fa-sign-in" aria-hidden="true"></i> CERRAR SESIÓN</a
+            >
+            <a class="nav-link" href="home.html">INICIO</a>
+            <a class="nav-link" href="busqueda.html">BIBLIOTECA</a>
+            <a class="nav-link" href="contacto.html">CONTACTO</a>
             <a class="d-none" id="admin" href="Registro.html">ADMINISTRACIÓN</a>
           </div>
         </div>
@@ -52,238 +49,201 @@
       </nav>
     </header>
 
-<main>
-  <div class="container-fluid ">
-    <div class="row">
-      
-      <div class="col-12 col-lg-6">
-        <div class="container-fluid text-white">
-          <div class="row">
-            <div class="cardLib col-12">
-          <div class="cardLib-header">
-            <h1 class="card-titleLib text-center mb-4">NUEVA PUBLICACIÓN</h1>
-            <br>
-          </div>
-          <div class="card-bodyLib">
-            <form class="needs-validation"
-            novalidate>
-            <div class="row">
-              <div class="form-group col-lg-6 col-md-12">
-                <label>TITULO</label>
-                <input
-                  type="text"
-                  class="form-control mb-4"
-                  id="titleText"
-                  required
-                />
-              </div>
-              <div class="form-group col-lg-6 col-md-12">
-                <label>AUTOR</label>
-                <input
-                  type="text"
-                  class="form-control mb-4"
-                  id="authorText"
-                  required
-                />
-              </div>
-              
-            </div>
-            <div class="row">
-              <div class="form-group col-lg-6 col-md-12">
-                <div class="form-group">
-                  <label>Demografia</label>
-                  <select
-                    class="form-control"
-                    id="demogText"
-                    required
-                  > 
-                    
-                    <option value="Shonnen">Shonnen</option>
-                    <option value="Seinen">Seinen</option>
-                    <option value="Shôjo">Shôjo</option>
-                    <option value="Josei">Josei</option>
-                    <option value="Kodomo">Kodomo</option>
-                  
-                  </select>
-                </div>
-
-              </div>
-              <div class="form-group col-lg-6 col-md-12">
-                <label>AÑO</label>
-                <input
-                  type="text"
-                  class="form-control mb-4"
-                  id="añoText"
-                  required
-                />
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="form-group col-lg-6 col-md-12">
-                <div class="form-group">
-                  <label>CATEGORIA</label>
-                  <select
-                    class="form-control"
-                    id="categText"
-                    required
-                  > 
-                    <option value="Accion">Accion</option>
-                    <option value="Deporte">Deporte</option>
-                    <option value="Romance">Romance</option>
-                    <option value="Terror">Terror</option>
-                    <option value="Suspenso">Suspenso</option>
-                    <option value="Mecha">Mecha</option>
-                  </select>
-                </div>
-              </div>
-              <div class="form-group col-lg-6 col-md-12">
-                <label>IMAGEN (url)</label>
-                <input
-                  type="text"
-                  class="form-control mb-2"
-                  id="imgText"
-                  required
-                />
-              </div>
-            </div>
-            <div class="row">
-              <div class="form-group col-lg-6 col-md-12">
-                <label>EDITORIAL</label>
-                <input
-                  type="text"
-                  class="form-control mb-2"
-                  id="ediText"
-                  required
-                />
-              </div>
-              <div class="form-group col-lg-6 col-md-12">
-              <label>TOMO 1 <small>(Tiene que pegar el link del pdf.)</small> </label>
-              <input
-                type="text"
-                class="form-control mb-4"
-                id="urlTomo"
-                required
-              />
-              
-              </div>
-            </div>
-
-            <div class="form-group mb-4">
-              <label>CONTRAPORTADA <small>(breve descripcion)</small></label>
-              <input
-                type="text"
-                class="form-control mb-4"
-                id="descripText"
-                required
-              />
-            </div>
-
-            
-            <button class="btn btn-danger btn-block font-weight-bold" onclick="agregarLib()">
-              ENVIAR
-            </button>
-          </form>
-          </div>
-        </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12 col-lg-6 bg-white">
-        <div class="container-fluid bg-white">
-          <div class="row">
-           <div class="col-12">
-             <br><br><br><br><br>
-             <div class="text-center">
-              <form>
-                <div class="row">
-                  <h1>PARA ENVIAR SU PDF/ARCHIVO COMO LINK, MIRE EL VIDEO</h1>
-                </div>
-                <div>
-                  <iframe width="100%" height="530px" src="https://www.youtube.com/embed/sWYnrA7z1GI?list=LL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-
-              </form>
-            </div>
-           </div>
-
-            
-          </div>
-        </div>
-      </div>
-        
-
-
+    <main>
+      <div class="container-fluid">
         <div class="row">
-          <a href="/Busqueda.html">ir a la tabla</a>
-        </div>
+          <div class="col-12 col-lg-6">
+            <div class="container-fluid text-white">
+              <div class="row">
+                <div class="cardLib col-12">
+                  <div class="cardLib-header">
+                    <h1 class="card-titleLib text-center mb-4">NUEVA PUBLICACIÓN</h1>
+                    <br />
+                  </div>
+                  <div class="card-bodyLib">
+                    <form class="needs-validation" novalidate>
+                      <div class="row">
+                        <div class="form-group col-lg-6 col-md-12">
+                          <label>TITULO</label>
+                          <input type="text" class="form-control mb-4" id="titleText" required />
+                        </div>
+                        <div class="form-group col-lg-6 col-md-12">
+                          <label>AUTOR</label>
+                          <input type="text" class="form-control mb-4" id="authorText" required />
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="form-group col-lg-6 col-md-12">
+                          <div class="form-group">
+                            <label>Demografia</label>
+                            <select class="form-control" id="demogText" required>
+                              <option value="Shonnen">Shonnen</option>
+                              <option value="Seinen">Seinen</option>
+                              <option value="Shôjo">Shôjo</option>
+                              <option value="Josei">Josei</option>
+                              <option value="Kodomo">Kodomo</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="form-group col-lg-6 col-md-12">
+                          <label>AÑO</label>
+                          <input type="text" class="form-control mb-4" id="añoText" required />
+                        </div>
+                      </div>
 
-      <!--  -->
-      <script>
-        // Example starter JavaScript for disabling form submissions if there are invalid fields
-        (function () {
-          "use strict";
-          window.addEventListener(
-            "load",
-            function () {
-              // Fetch all the forms we want to apply custom Bootstrap validation styles to
-              var forms =
-                document.getElementsByClassName("needs-validation");
-              // Loop over them and prevent submission
-              var validation = Array.prototype.filter.call(
-                forms,
-                function (form) {
-                  form.addEventListener(
-                    "submit",
-                    function (event) {
-                      if (form.checkValidity() === false) {
-                        event.preventDefault();
-                        event.stopPropagation();
-                      }
-                      form.classList.add("was-validated");
-                    },
-                    false
-                  );
-                }
+                      <div class="row">
+                        <div class="form-group col-lg-6 col-md-12">
+                          <div class="form-group">
+                            <label>CATEGORIA</label>
+                            <select class="form-control" id="categText" required>
+                              <option value="Accion">Accion</option>
+                              <option value="Deporte">Deporte</option>
+                              <option value="Romance">Romance</option>
+                              <option value="Terror">Terror</option>
+                              <option value="Suspenso">Suspenso</option>
+                              <option value="Mecha">Mecha</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="form-group col-lg-6 col-md-12">
+                          <label>IMAGEN (url)</label>
+                          <input type="text" class="form-control mb-2" id="imgText" required />
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="form-group col-lg-6 col-md-12">
+                          <label>EDITORIAL</label>
+                          <input type="text" class="form-control mb-2" id="ediText" required />
+                        </div>
+                        <div class="form-group col-lg-6 col-md-12">
+                          <label>TOMO 1 <small>(Tiene que pegar el link del pdf.)</small> </label>
+                          <input type="text" class="form-control mb-4" id="urlTomo" required />
+                        </div>
+                      </div>
+
+                      <div class="form-group mb-4">
+                        <label>CONTRAPORTADA <small>(breve descripcion)</small></label>
+                        <input type="text" class="form-control mb-4" id="descripText" required />
+                      </div>
+
+                      <button
+                        class="btn btn-danger btn-block font-weight-bold"
+                        onclick="agregarLib()"
+                      >
+                        ENVIAR
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-6 bg-white">
+            <div class="container-fluid bg-white">
+              <div class="row">
+                <div class="col-12">
+                  <br /><br /><br /><br /><br />
+                  <div class="text-center">
+                    <form>
+                      <div class="row">
+                        <h1>PARA ENVIAR SU PDF/ARCHIVO COMO LINK, MIRE EL VIDEO</h1>
+                      </div>
+                      <div>
+                        <iframe
+                          width="100%"
+                          height="530px"
+                          src="https://www.youtube.com/embed/sWYnrA7z1GI?list=LL"
+                          title="YouTube video player"
+                          frameborder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowfullscreen
+                        ></iframe>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <a href="/Busqueda.html">ir a la tabla</a>
+          </div>
+
+          <!--  -->
+          <script>
+            // Example starter JavaScript for disabling form submissions if there are invalid fields
+            (function () {
+              'use strict';
+              window.addEventListener(
+                'load',
+                function () {
+                  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                  var forms = document.getElementsByClassName('needs-validation');
+                  // Loop over them and prevent submission
+                  var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener(
+                      'submit',
+                      function (event) {
+                        if (form.checkValidity() === false) {
+                          event.preventDefault();
+                          event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                      },
+                      false
+                    );
+                  });
+                },
+                false
               );
-            },
-            false
-          );
-        })();
-      </script> 
-      <!--  -->
-    </div>
-  </div>
-</main>
+            })();
+          </script>
+          <!--  -->
+        </div>
+      </div>
+    </main>
 
- <!--Footer-->
- <footer class="footer-pagina">
-  <div class="container">
-    <div class="row text-center mt-2">
-      <div class="col-12 col-md-4 mb-2 pb-4 mx-auto">
-        <img  src="img/logo.png" class="pt-3" width="100px" alt="logo footer">
+    <!--Footer-->
+    <footer class="footer-pagina">
+      <div class="container">
+        <div class="row text-center mt-2">
+          <div class="col-12 col-md-4 mb-2 pb-4 mx-auto">
+            <img src="img/logo.png" class="pt-3" width="100px" alt="logo footer" />
+          </div>
+          <div
+            class="col-12 col-md-4 mb-4 mb-md-2 d-flex align-items-center justify-content-center"
+          >
+            <a href="./error404.html"
+              ><i class="fa fa-facebook fa-2x text-white mx-2" aria-hidden="true"></i
+            ></a>
+            <a href="./error404.html"
+              ><i class="fa fa-twitter fa-2x text-white mx-2" aria-hidden="true"></i
+            ></a>
+            <a href="./error404.html"
+              ><i class="fa fa-instagram fa-2x text-white mx-2" aria-hidden="true"></i
+            ></a>
+          </div>
+          <div
+            class="col-12 col-md-4 mb-4 mb-md-2 d-flex align-items-center justify-content-center"
+          >
+            <span
+              >+543815673097 <br />
+              Tucumán, Argentina <br />
+              mangatuc@gmail.com</span
+            >
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 text-center">
+            <p class="small">&copy; Tucumanga 2021. Todos los derechos reservados.</p>
+          </div>
+        </div>
       </div>
-      <div class="col-12 col-md-4 mb-4 mb-md-2 d-flex align-items-center justify-content-center">
-              <a href="#"><i class="fa fa-facebook fa-2x text-white mx-2" aria-hidden="true"></i></a>
-              <a href="#"><i class="fa fa-twitter fa-2x text-white mx-2" aria-hidden="true"></i></a>
-              <a href="#"><i class="fa fa-instagram fa-2x text-white mx-2" aria-hidden="true"></i></a>
-      </div>
-      <div class="col-12 col-md-4 mb-4 mb-md-2 d-flex align-items-center justify-content-center">
-        <span>+543815673097 <br> Tucumán, Argentina <br> mangatuc@gmail.com</span>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12 text-center">
-        <p class="small">&copy; Tucumanga 2021. Todos los derechos reservados.</p>
-      </div>
-    </div>
-  </div>
-</footer>
+    </footer>
 
-<!--Fin footer-->
-   
-
+    <!--Fin footer-->
 
     <script src="./js/Registro.js"></script>
     <script src="js/nav.js"></script>

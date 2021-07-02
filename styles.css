@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-body{
+body {
   background-color: #161616;
   /* background-color: white; */
 }
@@ -18,7 +18,7 @@ body{
 /* Home */
 
 .titleHome {
-  background-image: linear-gradient(to right top, #ff0000, #fa4500, #f56300, #f07a00, #eb8d12);;
+  background-image: linear-gradient(to right top, #ff0000, #fa4500, #f56300, #f07a00, #eb8d12);
   border-radius: 20px;
   padding: 6px 9px;
 }
@@ -30,7 +30,7 @@ body{
 /* imagenes del home */
 .img-fluid {
   width: 100%;
-  height: 100%; 
+  height: 100%;
 }
 
 .img-topm {
@@ -43,21 +43,21 @@ body{
   filter: grayscale(1);
 }
 
-.verMangaModal{
-border-radius: 7px;
-background-color: rgb(255, 255, 255);
-left: 30%;
-top: 50%;
-position:absolute;
-transition:all .3s;
-border: 1px solid rgb(216, 216, 216);
-opacity:0;
+.verMangaModal {
+  border-radius: 7px;
+  background-color: rgb(255, 255, 255);
+  left: 30%;
+  top: 50%;
+  position: absolute;
+  transition: all 0.3s;
+  border: 1px solid rgb(216, 216, 216);
+  opacity: 0;
 }
 
-.verMangaModal:hover{
+.verMangaModal:hover {
   opacity: 1;
   transform: scale(1.3);
-  filter:grayscale(0);
+  filter: grayscale(0);
 }
 
 /* texto del home */
@@ -103,7 +103,7 @@ opacity:0;
 /* Fin de Registro */
 
 /* Sección biblioteca */
-#tomo_Manga{
+#tomo_Manga {
   width: 100%;
   height: 480px;
   border-radius: 3px;
@@ -193,6 +193,42 @@ textarea.form-control::placeholder {
 
 /* Fin de contacto */
 
+/* Error 404 */
+.error-title {
+  text-align: center;
+  font-size: 180px;
+  color: #eb8d12;
+}
+
+.error-subtitle {
+  color: #fa4500;
+}
+
+#error-body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: relative;
+}
+
+#error-body::after {
+  content: '';
+  background: url(./img/error-background.jpg);
+  opacity: 0.06;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+#error-main {
+  height: 100%;
+}
+
+/* Fin de Error 404 */
+
 /* Sección footer */
 .footer-pagina {
   margin-top: 50px;
@@ -202,28 +238,24 @@ textarea.form-control::placeholder {
   color: white;
 }
 
-
-
-
-.titleHPopular{
+.titleHPopular {
   background-image: linear-gradient(to right top, #ff0000, #fa4500, #f56300, #f07a00, #eb8d12);
   border-top-right-radius: 7px;
-  border-top-left-radius:7px;
+  border-top-left-radius: 7px;
 }
 
-#topTabla{
-  background-image: linear-gradient(to right top, #ff0000, #fa4500, #f56300, #f07a00, #eb8d12);
-  color: white;
-
-}
-
-.bt-categoria{
+#topTabla {
   background-image: linear-gradient(to right top, #ff0000, #fa4500, #f56300, #f07a00, #eb8d12);
   color: white;
 }
 
+.bt-categoria {
+  background-image: linear-gradient(to right top, #ff0000, #fa4500, #f56300, #f07a00, #eb8d12);
+  color: white;
+}
 
-.administManga{
+.administManga {
   background-image: linear-gradient(to right top, #ff0000, #fa4500, #f56300, #f07a00, #eb8d12);
   color: rgb(0, 0, 0);
-  border-radius: 7px;}
+  border-radius: 7px;
+}

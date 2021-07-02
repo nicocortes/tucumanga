@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="styles.css" />
     <title>Tucumanga</title>
   </head>
-  <body>
+  <body id="error-body">
     <header>
       <nav id="nav" class="navbar navbar-expand-lg navbar-dark fondoNav">
         <button
@@ -35,14 +35,15 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            
             <a class="nav-link" id="iniciarSesion" href="login.html"
-              ><i class="fa fa-sign-in" aria-hidden="true"></i> INICIA SESIÓN</a>
+              ><i class="fa fa-sign-in" aria-hidden="true"></i> INICIA SESIÓN</a
+            >
             <a class="d-none" id="cierraSesion" href="login.html" onclick="cerrarSesion()"
-              ><i class="fa fa-sign-in" aria-hidden="true"></i> CERRAR SESIÓN</a>
-            <a class="nav-link"  href="home.html">INICIO</a>
-            <a class="nav-link"  href="busqueda.html">BIBLIOTECA</a>
-            <a class="nav-link"  href="contacto.html">CONTACTO</a>
+              ><i class="fa fa-sign-in" aria-hidden="true"></i> CERRAR SESIÓN</a
+            >
+            <a class="nav-link" href="home.html">INICIO</a>
+            <a class="nav-link" href="busqueda.html">BIBLIOTECA</a>
+            <a class="nav-link" href="contacto.html">CONTACTO</a>
             <a class="d-none" id="admin" href="Registro.html">ADMINISTRACIÓN</a>
           </div>
         </div>
@@ -50,19 +51,29 @@
       </nav>
     </header>
 
-    <main>
-      <!-- Seccion error404 -->
-      <section>
-        <div class="container">
-          <div class="row mt-4">
-            <h1 class="mt-4">ERROR404</h1>
-            <hr />
-            <br />
-            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <main id="error-main">
+      <div class="container my-5">
+        <git class="row">
+          <git class="col">
+            <h1 class="error-title">404</h1>
+            <h2 class="text-center error-subtitle">PÁGINA NO ENCONTRADA</h2>
+            <h5 class="text-center text-white">
+              ¡Disculpa las molestias! Estamos trabajando para que puedas tener la mejor
+              experiencia.
+              <br />
+              Mientras tanto puedes...
+            </h5>
+          </git>
+        </git>
+        <div class="row mt-5">
+          <div class="col text-right">
+            <a class="btn btn-light" href="./home.html" role="button">IR A INICIO</a>
+          </div>
+          <div class="col text-left">
+            <a class="btn btn-secondary" href="./contacto.html" role="button">CONTÁCTANOS</a>
           </div>
         </div>
-      </section>
-      <!-- Fin de Seccion error404 -->
+      </div>
     </main>
 
     <!--Footer-->
@@ -75,9 +86,15 @@
           <div
             class="col-12 col-md-4 mb-4 mb-md-2 d-flex align-items-center justify-content-center"
           >
-            <a href="#"><i class="fa fa-facebook fa-2x text-white mx-2" aria-hidden="true"></i></a>
-            <a href="#"><i class="fa fa-twitter fa-2x text-white mx-2" aria-hidden="true"></i></a>
-            <a href="#"><i class="fa fa-instagram fa-2x text-white mx-2" aria-hidden="true"></i></a>
+            <a href="./error404.html"
+              ><i class="fa fa-facebook fa-2x text-white mx-2" aria-hidden="true"></i
+            ></a>
+            <a href="./error404.html"
+              ><i class="fa fa-twitter fa-2x text-white mx-2" aria-hidden="true"></i
+            ></a>
+            <a href="./error404.html"
+              ><i class="fa fa-instagram fa-2x text-white mx-2" aria-hidden="true"></i
+            ></a>
           </div>
           <div
             class="col-12 col-md-4 mb-4 mb-md-2 d-flex align-items-center justify-content-center"
