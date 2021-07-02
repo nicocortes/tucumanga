@@ -64,13 +64,16 @@ function cargarManga(Mangas){
     IMGtotal.innerHTML = "";
     moverVisto()
   biblioteca = JSON.parse(localStorage.getItem("biblioteca"));
+  mangasTop = biblioteca
    //traigo de nuevo la biblioteca para sacar el indice
-  Mangas.forEach(function (libro, index) {
+   let vuelta = 0
+   Mangas.forEach(function (libro, index)  {
     //variable indice donde obtengo la posicion del libro seleccionado
+   
+    if (vuelta < 5){
     let indice = biblioteca.findIndex(function (item) {
       return item.titulo === libro.titulo;
     });
-
     console.log(indice);
     let fila = document.createElement("div");
     fila.classList = "col-6 col-md-4 col-lg-3 col-xl-2 mt-4 mb-4 img-topm";
@@ -93,9 +96,13 @@ function cargarManga(Mangas){
         `;
     fila.innerHTML = datos;
     IMGtotal.appendChild(fila);
-  });
+    vuelta++
+  };
   
+})
 }
+  
+
 function cargarManga2(){
     IMGtotal2.innerHTML = "";
     biblioteca = JSON.parse(localStorage.getItem("biblioteca")) || [];
