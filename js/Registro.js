@@ -1,3 +1,4 @@
+
 //Traigo de localStorage los datos si los hay
 let biblioteca = JSON.parse(localStorage.getItem("biblioteca")) || [];
 let mangasTop = {}; 
@@ -193,3 +194,26 @@ if (cuerpoLib) {
 if (cuerpoLib2) {
     cargarManga2()
 }
+
+let usuarioLog = JSON.parse(localStorage.getItem("usuario")) || "";
+
+let administrador = {
+    email: "admin@gmail.com",
+    contraseña: "admin",
+  };
+
+function redirigirHome() {
+  if (usuarioLog === "") {
+    location.replace("/home.html");
+  } else {
+    if (
+        usuarioLog.email != administrador.email &&
+        usuarioLog.contraseña != administrador.contraseña
+    ) {
+      location.replace("/home.html");
+    }
+  }
+}
+redirigirHome();
+
+
