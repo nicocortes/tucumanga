@@ -80,8 +80,7 @@ function cargarManga(Mangas){
       src="${libro.imagen}"
       alt=""
       class="img-fluid"
-      width="350px"
-      height="250px"
+      
       
   />
   <div class="verMangaModal text-center">
@@ -107,8 +106,7 @@ function cargarManga2(){
         <img
           src="${libro.imagen}"
           alt=""
-          width="100%"
-          height="100%"
+          class="img-fluid"
       />
       <div class="verMangaModal text-center">
       <button class="btn font-weight-bold" onclick='verManga(${index})'>--Leer--</button>

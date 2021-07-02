@@ -35,9 +35,7 @@ function cargarManga3(Mangas) {
       src="${libro.imagen}"
       alt=""
       class="img-fluid"
-      width="350px"
-      height="250px"
-      
+     
   />
   <div class="verMangaModal text-center">
   <button class="btn font-weight-bold" onclick='verManga(${indice})' >--Leer--</button>
@@ -86,7 +84,7 @@ function verManga(id) {
   document.querySelector("#text_Sinopsis").innerText = manga.descripcion;
   document.querySelector("#urlDeTomo").innerText = manga.tomo;
   document.querySelector("#demogText").innerText = manga.demografia;
-  
+  positionTop()
   $("#verManga").modal("show");
 }
 

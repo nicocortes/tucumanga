@@ -34,8 +34,8 @@ function cargarManga4(Mangas) {
         <img
         src="${libro.imagen}"
         alt=""
-        width="100%"
-        height="100%"
+        class="img-fluid"
+        
         />
         </div>
 
