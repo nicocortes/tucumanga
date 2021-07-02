@@ -21,7 +21,7 @@
     <title>Tucumanga</title>
   </head>
   <body>
-        <header>
+    <header>
       <nav id="nav" class="navbar navbar-expand-lg navbar-dark fondoNav">
         <button
           class="navbar-toggler"
@@ -37,22 +37,17 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
             
-            <a class="nav-link" id="iniciarSesion" href="login.html"
+            <a class="nav-link active" id="iniciarSesion" href="login.html"
               ><i class="fa fa-sign-in" aria-hidden="true"></i> INICIA SESIÓN</a>
             <a class="d-none" id="cierraSesion" href="login.html" onclick="cerrarSesion()"
               ><i class="fa fa-sign-in" aria-hidden="true"></i> CERRAR SESIÓN</a>
             <a class="nav-link"  href="home.html">INICIO</a>
-            <a class="nav-link active"  href="busqueda.html">BIBLIOTECA</a>
+            <a class="nav-link"  href="busqueda.html">BIBLIOTECA</a>
             <a class="nav-link"  href="contacto.html">CONTACTO</a>
             <a class="d-none" id="admin" href="Registro.html">ADMINISTRACIÓN</a>
           </div>
         </div>
-
-        <a class="navbar-brand" href="home.html"
-          ><img src="img/logo.png" alt="logo"
-        /></a>
-        <a href="/busqueda.html"><i class="fa fa-search fa-2x text-white mx-2" aria-hidden="true"></i></a>
-
+        <a class="navbar-brand" href="home.html"><img src="img/logo.png" alt="" /></a>
       </nav>
     </header>
     <main>
@@ -240,14 +235,7 @@
                   <h5 class="pr-2">Cantidad de mangas:</h5><h5 id="contadorManga"></h5>
                 </div></div>
               
-              <!-- Fin Biblioteca -->
-              <div class="row">
-            <div class="col text-center text-white font-weight-bold mt-4">
-              <a href="/Registro.html">ir a registro</a>
-              
-              
-            </div>
-          </div>
+    
             </div>
             <div class="col-12 col-md-3">
             </div>
@@ -374,8 +362,9 @@
    <!-- fin modal -->
 
  
-
-    <script src="./js/biblioteca.js"></script> 
+   
+   <script src="./js/nav.js"></script> 
+   <script src="./js/biblioteca.js"></script> 
     <script src="./js/Registro.js"></script>
 
     <script
