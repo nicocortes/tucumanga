@@ -43,21 +43,13 @@ const agregarLib = function () {
 
         biblioteca.push(new Libreria(titulo.value, descripcion.value, categoria.value, autor.value, año.value, editorial.value, imagen.value, tomo.value, demografia.value,visitas))
         localStorage.setItem("biblioteca", JSON.stringify(biblioteca))
-        updateLib()
+        
     } else {
         alert("faltan datos")
     }
 
 }
-function updateLib(){
-    titulo.value = ""
-    descripcion.value = ""
-    autor.value = ""
-    año.value = ""
-    editorial.value = ""
-    imagen.value = ""
-    tomo.value = ""
-}
+
 
 //Tabla mangas
 function cargarManga(Mangas){
@@ -137,6 +129,7 @@ function verManga(id){
     document.querySelector('#text_Año').innerText = mangasTop.año
     document.querySelector('#text_Editorial').innerText = mangasTop.editorial
     document.querySelector('#text_Sinopsis').innerText=mangasTop.descripcion
+    document.querySelector('#urlDeTomo').href=mangasTop.tomo
     document.querySelector('#urlDeTomo').innerText=mangasTop.tomo
     document.querySelector('#demogText').innerText = mangasTop.demografia
     $('#verManga').modal("show")

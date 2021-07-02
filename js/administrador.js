@@ -80,6 +80,7 @@ function verMangaAdm(id) {
   document.querySelector("#text_Año").innerText = manga.año;
   document.querySelector("#text_Editorial").innerText = manga.editorial;
   document.querySelector("#text_Sinopsis").innerText = manga.descripcion;
+  document.querySelector('#urlDeTomo').href=manga.tomo
   document.querySelector("#urlDeTomo").innerText = manga.tomo;
   document.querySelector("#demogText").innerText = manga.demografia;
   
