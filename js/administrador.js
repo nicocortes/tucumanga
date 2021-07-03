@@ -34,8 +34,8 @@ function cargarManga4(Mangas) {
         <img
         src="${libro.imagen}"
         alt=""
-        width="100%"
-        height="100%"
+        class="img-fluid"
+        
         />
         </div>
 
@@ -80,6 +80,7 @@ function verMangaAdm(id) {
   document.querySelector("#text_Año").innerText = manga.año;
   document.querySelector("#text_Editorial").innerText = manga.editorial;
   document.querySelector("#text_Sinopsis").innerText = manga.descripcion;
+  document.querySelector('#urlDeTomo').href=manga.tomo
   document.querySelector("#urlDeTomo").innerText = manga.tomo;
   document.querySelector("#demogText").innerText = manga.demografia;
   
