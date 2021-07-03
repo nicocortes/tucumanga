@@ -198,7 +198,8 @@ textarea.form-control::placeholder {
   margin-top: 50px;
   padding-top: 20px;
   padding-bottom: 20px;
-  background-image: linear-gradient(to right top, #ff0000, #fa4500, #f56300, #f07a00, #eb8d12);
+  background-color: #f56300;
+  /* background-image: linear-gradient(to right top, #ff0000, #fa4500, #f56300, #f07a00, #eb8d12); */
   color: white;
 }
 
