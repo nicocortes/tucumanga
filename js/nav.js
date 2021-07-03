@@ -10,7 +10,7 @@ function cambiarNav() {
     usuarioLogeado.email === admin.email &&
     usuarioLogeado.contraseña === admin.contraseña
   ) {
-    let link = document.querySelector("#admin").className="nav-link";
+    let link = document.querySelector("#admin").className="nav-link text-white";
     console.log("El usuario es el administrador");
   } else {
     console.log("El usuario no es el administrador");
@@ -20,7 +20,7 @@ function cambiarNav() {
 function navLogeado(){
   if(usuarioLogeado.email && usuarioLogeado.contraseña){
     let linkIS= document.querySelector('#iniciarSesion').className='d-none'
-    let linkCS= document.querySelector('#cierraSesion').className='nav-link'
+    let linkCS= document.querySelector('#cierraSesion').className='nav-link text-white'
     console.log('Usuario log')
   }else{
     console.log('No hay un usuario log')
