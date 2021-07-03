@@ -1,7 +1,7 @@
-
 //Traigo de localStorage los datos si los hay
 let biblioteca = JSON.parse(localStorage.getItem("biblioteca")) || [];
 let mangasTop = {}; 
+let ultimo = biblioteca
 
 //Capturo cada elemento del formulario de registro
 titulo = document.querySelector("#titleText")
@@ -98,7 +98,13 @@ function cargarManga(Mangas){
 function cargarManga2(){
     IMGtotal2.innerHTML = "";
     biblioteca = JSON.parse(localStorage.getItem("biblioteca")) || [];
-    biblioteca.forEach(function (libro, index) {
+    let vuelta = 0
+    ultimo.reverse().forEach(function (libro, index) {
+      let indice = biblioteca.findIndex(function (item) {
+        return item.titulo === libro.titulo;
+      });
+      console.log(indice);
+      if(vuelta < 8){
         let fila = document.createElement("div");
         fila.classList = "col-6 col-md-3 col-xl-3  mt-4 mb-4 img-topm"
         let datos = `    
@@ -108,7 +114,7 @@ function cargarManga2(){
           class="img-fluid"
       />
       <div class="verMangaModal text-center">
-      <button class="btn font-weight-bold" onclick='verManga(${index})'>--Leer--</button>
+      <button class="btn font-weight-bold" onclick='verManga(${indice})'>--Leer--</button>
       </div>
       <div class="capa text-white text-center">
         <h5>${libro.titulo}</h5>
@@ -116,6 +122,7 @@ function cargarManga2(){
         `;
         fila.innerHTML = datos;
         IMGtotal2.appendChild(fila);
+        vuelta++}
     });
 }
 
