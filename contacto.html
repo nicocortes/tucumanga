@@ -46,7 +46,6 @@
       </nav>
     </header>
     <main>
-      
       <!-- SECTION CONTACT -->
       <section>
         <div class="container mt-5 text-white">
@@ -78,35 +77,32 @@
             <div class="col-md-6 contact-form">
               <h3>Cuéntanos, ¿qué necesitas?</h3>
               <hr class="form-hr" />
-              <form>
+              <form onsubmit="enviandoMensaje(event)">
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label>Nombre: <span class="text-danger">*</span></label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="exampleFormControlInput1"
-                      required
-                    />
+                    <input type="text" class="form-control" id="contact-nombre" />
                   </div>
                   <div class="form-group col-md-6">
-                    <label>Teléfono:</label>
-                    <input type="tel" class="form-control" id="exampleFormControlInput1" />
+                    <label class="text-nowrap"
+                      >Teléfono <small class="font-italic">(0381-154456699)</small>:</label
+                    >
+                    <input
+                      type="tel"
+                      class="form-control"
+                      id="contact-telefono"
+                      pattern="[0-9]{4}-[0-9]{9}"
+                    />
                   </div>
                 </div>
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label>E-mail: <span class="text-danger">*</span></label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="exampleFormControlInput1"
-                      required
-                    />
+                    <input type="email" class="form-control" id="contact-email" />
                   </div>
                   <div class="form-group col-md-6">
                     <label>Asunto:</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" />
+                    <input type="text" class="form-control" id="contact-asunto" />
                   </div>
                 </div>
                 <div class="form-group">
@@ -115,14 +111,13 @@
                   >
                   <textarea
                     class="form-control"
-                    id="exampleFormControlTextarea1"
+                    id="contact-mensaje"
                     rows="3"
                     placeholder="¿No encuentras tu manga favorito? ¿No sabes como cargar tu manga? Cuéntanos..."
-                    required
                   ></textarea>
                 </div>
                 <div>
-                  <button class="btn form-button btn-danger btn-block">Enviar</button>
+                  <button type="submit" class="btn form-button btn-danger btn-block">Enviar</button>
                   <small class="text-muted font-italic">(*) Campos obligatorios</small>
                 </div>
               </form>
@@ -176,6 +171,8 @@
       integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://use.fontawesome.com/a79dcfd0b0.js"></script>
+    <script src="./js/contacto.js"></script>
   </body>
 </html>

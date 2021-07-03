@@ -132,6 +132,10 @@ textarea.form-control::placeholder {
   color: rgb(146, 146, 146);
 }
 
+textarea {
+  resize: none;
+}
+
 .form-hr {
   width: 30%;
   height: 10px;
