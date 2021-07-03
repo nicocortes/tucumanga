@@ -19,6 +19,13 @@ class Visitante {
 const enviandoMensaje = function (e) {
   e.preventDefault();
   if (nombre.value && email.value && mensaje.value) {
+    if (!telefono.value) {
+      telefono.value = 'null';
+    }
+    if (!asunto.value) {
+      asunto.value = 'null';
+    }
+
     visitantes.push(
       new Visitante(
         nombre.value.toLowerCase(),
@@ -28,6 +35,7 @@ const enviandoMensaje = function (e) {
         mensaje.value.toLowerCase()
       )
     );
+
     localStorage.setItem('visitantes', JSON.stringify(visitantes));
     updateContactForm();
     swal({
