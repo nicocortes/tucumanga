@@ -14,7 +14,7 @@ let usuarioLogeado= JSON.parse(localStorage.getItem('usuario'))|| {};
 console.log(usuarioLogeado)
 
 if(JSON.parse(localStorage.getItem('usuario'))){
-    location.replace('/home.html')
+    location.replace('/index.html')
 }
 const handleChange = function (e){
     console.log(e.target.value);
@@ -40,7 +40,7 @@ const handleSubmit = function(e){
 
         localStorage.setItem('usuario', JSON.stringify(admin))
         setTimeout(()=>{
-            location.replace('/home.html')
+            location.replace('/index.html')
         },1500)
     }else{
         
@@ -55,7 +55,7 @@ const handleSubmit = function(e){
     
                 localStorage.setItem('usuario', JSON.stringify(usuarioVerificado))
                 setTimeout(()=>{
-                    location.replace('/home.html')
+                    location.replace('/index.html')
                 },1500)
             }else{
                 swal({

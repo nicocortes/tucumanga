@@ -15,6 +15,7 @@ body {
   /* background-image: linear-gradient(to right top, #ff0000, #fa4500, #f56300, #f07a00, #eb8d12); */
 }
 
+
 /* Home */
 
 .titleHome {
@@ -88,7 +89,7 @@ body {
 
 /* Fin del Home */
 
-/* Registro */
+/* Alta libros*/
 .fondo-registro {
   background-color: rgb(36, 36, 36);
 }
@@ -100,7 +101,7 @@ body {
   padding-top: 50px;
   padding-bottom: 40px;
 }
-/* Fin de Registro */
+/* Fin de Alta libros */
 
 /* Sección biblioteca */
 #tomo_Manga {
@@ -123,6 +124,10 @@ body {
 
 .registroLogin {
   width: 70%;
+}
+
+.seccionRegistro{
+  color: white;
 }
 /* Fin login */
 
@@ -198,7 +203,8 @@ textarea.form-control::placeholder {
   margin-top: 50px;
   padding-top: 20px;
   padding-bottom: 20px;
-  background-image: linear-gradient(to right top, #ff0000, #fa4500, #f56300, #f07a00, #eb8d12);
+  background-color: #f56300;
+  /* background-image: linear-gradient(to right top, #ff0000, #fa4500, #f56300, #f07a00, #eb8d12); */
   color: white;
 }
 
