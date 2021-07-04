@@ -94,12 +94,20 @@ opacity:0;
   background-color: rgb(36, 36, 36);
 }
 
+.title-regis{
+  color: #ff9100;
+}
+
+.botonRegis{
+  background-image: linear-gradient(to right top, #ff0000, #fa4500, #f56300, #f07a00, #eb8d12);
+}
+
 .cardLib {
   background-color: rgb(36, 36, 36);
   margin-top: 70px;
-  margin-bottom: 150px;
+  
   padding-top: 50px;
-  padding-bottom: 40px;
+  
 }
 /* Fin de Alta libros */
 
@@ -233,3 +241,12 @@ textarea.form-control::placeholder {
   background-image: linear-gradient(to right top, #ff0000, #fa4500, #f56300, #f07a00, #eb8d12);
   color: rgb(0, 0, 0);
   border-radius: 7px;}
+
+
+.modal-header,.modal-body,.cuerpo-body-card,.modal-footer{
+  background-image: linear-gradient(to right top, #ff0000, #fa4500, #f56300, #f07a00, #eb8d12);
+  border: none;
+  color: #000000;
+}
+
+
