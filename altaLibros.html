@@ -46,7 +46,8 @@
             <a class="nav-link text-white"  href="biblioteca.html">BIBLIOTECA</a>
             <a class="nav-link text-white"  href="about.html">SOBRE NOSOTROS</a>
             <a class="nav-link text-white"  href="contacto.html">CONTACTO</a>
-            <a class="d-none" id="admin" href="altaLibros.html">ADMINISTRACIÓN</a>
+            <a class="d-none" id="admin" href="administracion.html">ADMINISTRACIÓN</a>
+            <a class="d-none" id="alta" href="altaLibros.html">SUBIR MANGA</a>
           </div>
         </div>
         <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="" /></a>
@@ -73,6 +74,8 @@
                 <label>TITULO</label>
                 <input
                   type="text"
+                  maxlength="45"
+                  minlength="3"
                   class="form-control mb-4"
                   id="titleText"
                   required
@@ -82,6 +85,8 @@
                 <label>AUTOR</label>
                 <input
                   type="text"
+                  maxlength="40"
+                  minlength="3"
                   class="form-control mb-4"
                   id="authorText"
                   required
@@ -92,7 +97,7 @@
             <div class="row">
               <div class="form-group col-lg-6 col-md-12">
                 <div class="form-group">
-                  <label>Demografia</label>
+                  <label>DEMOGRAFIA</label>
                   <select
                     class="form-control"
                     id="demogText"
@@ -110,9 +115,9 @@
 
               </div>
               <div class="form-group col-lg-6 col-md-12">
-                <label>AÑO</label>
+                <label>FECHA DE PUBLICACIÓN</label>
                 <input
-                  type="text"
+                  type="date"
                   class="form-control mb-4"
                   id="añoText"
                   required
@@ -154,12 +159,14 @@
                 <input
                   type="text"
                   class="form-control mb-2"
+                  maxlength="40"
+                  minlength="3"
                   id="ediText"
                   required
                 />
               </div>
               <div class="form-group col-lg-6 col-md-12">
-              <label>TOMO 1 <small>(Tiene que pegar el link del pdf.)</small> </label>
+              <label>TOMO 1 <small>(Debe pegar el link del pdf.)</small> </label>
               <input
                 type="text"
                 class="form-control mb-4"
@@ -176,6 +183,8 @@
                 type="text"
                 class="form-control mb-4"
                 id="descripText"
+                maxlength="300"
+                minlength="20"
                 required
               />
             </div>

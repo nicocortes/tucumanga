@@ -37,14 +37,16 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
             
-            <a class="nav-link active" id="iniciarSesion" href="/login.html"
+            <a class="nav-link active" id="iniciarSesion" href="login.html"
               ><i class="fa fa-sign-in" aria-hidden="true"></i> INICIA SESIÓN</a>
-            <a class="d-none" id="cierraSesion" href="/login.html" onclick="cerrarSesion()"
+            <a class="d-none" id="cierraSesion" href="login.html" onclick="cerrarSesion()"
               ><i class="fa fa-sign-in" aria-hidden="true"></i> CERRAR SESIÓN</a>
-            <a class="nav-link text-white"  href="/index.html">INICIO</a>
-            <a class="nav-link text-white"  href="/biblioteca.html">BIBLIOTECA</a>
-            <a class="nav-link text-white"  href="/contacto.html">CONTACTO</a>
-            <a class="d-none" id="admin" href="Registro.html">ADMINISTRACIÓN</a>
+            <a class="nav-link text-white"  href="index.html">INICIO</a>
+            <a class="nav-link text-white"  href="biblioteca.html">BIBLIOTECA</a>
+            <a class="nav-link text-white"  href="about.html">SOBRE NOSOTROS</a>
+            <a class="nav-link text-white"  href="contacto.html">CONTACTO</a>
+            <a class="d-none" id="admin" href="administracion.html">ADMINISTRACIÓN</a>
+            <a class="d-none" id="alta" href="altaLibros.html">SUBIR MANGA</a>
           </div>
         </div>
         <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="" /></a>
@@ -219,14 +221,15 @@
                    <strong>Autor: </strong><span id="text_autor"></span>
                  </p>
                  <p class="card-text">
+                   <strong>Fecha de publicación: </strong><span id="text_Año"></span>
+                 </p>
+                 <p class="card-text">
                   <strong>Demografia: </strong><span id="demogText"></span>
                 </p>
                  <p class="card-text">
                    <strong>Categoria: </strong><span id="text_categoti"></span>
                  </p>
-                 <p class="card-text">
-                   <strong>Año: </strong><span id="text_Año"></span>
-                 </p>
+                 
                  <p class="card-text">
                    <strong>Editorial: </strong><span id="text_Editorial"></span>
                  </p>
@@ -313,7 +316,7 @@
                     <div class="row">
                       <div class="form-group col-lg-6 col-md-12">
                         <div class="form-group">
-                          <label>Demografia</label>
+                          <label>DEMOGRAFIA</label>
                           <select
                             class="form-control"
                             id="demogModal"
@@ -331,9 +334,9 @@
         
                       </div>
                       <div class="form-group col-lg-6 col-md-12">
-                        <label>AÑO</label>
+                        <label>FECHA DE PUBLICACION</label>
                         <input
-                          type="text"
+                          type="date"
                           class="form-control mb-4"
                           id="añoModal"
                           name="año"
@@ -419,7 +422,7 @@
         
 
  
-
+<script src="/js/nav.js"></script>
     <script src="./js/administrador.js"></script> 
     <script src="/js/biblioteca.js"></script>
     <script src="./js/Registro.js"></script>
