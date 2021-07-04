@@ -189,6 +189,28 @@ textarea.form-control::placeholder {
   height: 600px;
 }
 
+.about-divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 160px;
+  margin-top: 180px;
+  color: white;
+  background-color: #343a40;
+  border-bottom: solid 5px #f56300;
+}
+
+.img-avatarabout {
+  border: 2px solid #f56300;
+}
+.img-avatarabout:hover {
+  opacity: 0.5;
+}
+#about-tucumanga-tiltle {
+  color: #f56300;
+}
+
 @media (max-width: 770px) {
   .contact-first-col {
     margin-bottom: 50px;
