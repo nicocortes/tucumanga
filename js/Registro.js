@@ -41,11 +41,21 @@ const agregarLib = function () {
             imagen.value = "https://static.wikia.nocookie.net/la-bitacora-del-capitan/images/6/67/Not_found.png/revision/latest?cb=20190509042801&path-prefix=es"
         }
 
-        biblioteca.push(new Libreria(titulo.value, descripcion.value, categoria.value, autor.value, año.value, editorial.value, imagen.value, tomo.value, demografia.value,visitas))
+        biblioteca.push(new Libreria(
+          titulo.value.charAt(0).toUpperCase() + titulo.value.slice(1),
+           descripcion.value, 
+           categoria.value, 
+           autor.value, 
+           año.value, 
+           editorial.value, 
+           imagen.value, 
+           tomo.value, 
+           demografia.value,
+           visitas))
         localStorage.setItem("biblioteca", JSON.stringify(biblioteca))
         
     } else {
-        alert("faltan datos")
+        alert("Faltan datos, ingreselos de nuevo.")
     }
 
 }

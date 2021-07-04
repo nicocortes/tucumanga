@@ -102,7 +102,7 @@ function filterBiblio() {
   Mangas = JSON.parse(localStorage.getItem("biblioteca"));
 
   Mangas = Mangas.filter(function (manga) {
-    return manga.titulo.indexOf(texto.value) > -1;
+    return manga.titulo.indexOf(texto.value.charAt(0).toUpperCase() + texto.value.toLowerCase().slice(1)) > -1;
   });
   texto.value=""
   texto.focus()
