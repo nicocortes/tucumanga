@@ -136,7 +136,7 @@ body {
   color: white;
 }
 
-.btn-orange{
+.btn-orange {
   background-color: #f56300;
   color: white;
 }
@@ -153,7 +153,11 @@ textarea.form-control::placeholder {
   height: 10px;
   border: none;
   margin-left: 0;
-  background-color: #dc3545;
+  background-color: #f56300;
+}
+
+.contact-number {
+  background-color: #f56300;
 }
 
 .contact-info {
