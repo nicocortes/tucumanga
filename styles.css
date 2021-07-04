@@ -135,6 +135,11 @@ body {
 .seccionRegistro {
   color: white;
 }
+
+.btn-orange{
+  background-color: #f56300;
+  color: white;
+}
 /* Fin login */
 
 /* Contacto */

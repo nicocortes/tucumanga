@@ -96,3 +96,9 @@ function validarGeneral(element) {
     element.className = 'form-control is-valid';
   }
 }
+
+function limiteLetras(){
+  if(nombre.value.length > 30){
+    
+  }
+}
