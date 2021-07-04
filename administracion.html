@@ -37,13 +37,13 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
             
-            <a class="nav-link active" id="iniciarSesion" href="login.html"
+            <a class="nav-link active" id="iniciarSesion" href="/login.html"
               ><i class="fa fa-sign-in" aria-hidden="true"></i> INICIA SESIÓN</a>
-            <a class="d-none" id="cierraSesion" href="login.html" onclick="cerrarSesion()"
+            <a class="d-none" id="cierraSesion" href="/login.html" onclick="cerrarSesion()"
               ><i class="fa fa-sign-in" aria-hidden="true"></i> CERRAR SESIÓN</a>
-            <a class="nav-link text-white"  href="home.html">INICIO</a>
-            <a class="nav-link text-white"  href="busqueda.html">BIBLIOTECA</a>
-            <a class="nav-link text-white"  href="contacto.html">CONTACTO</a>
+            <a class="nav-link text-white"  href="/index.html">INICIO</a>
+            <a class="nav-link text-white"  href="/biblioteca.html">BIBLIOTECA</a>
+            <a class="nav-link text-white"  href="/contacto.html">CONTACTO</a>
             <a class="d-none" id="admin" href="Registro.html">ADMINISTRACIÓN</a>
           </div>
         </div>
@@ -195,7 +195,7 @@
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="TituloModal"></h5>
+          <h3 class="modal-title" id="TituloModal"></h3>
           <button
             type="button"
             class="close"
@@ -207,8 +207,8 @@
         </div>
         <div class="modal-body">
           <!-- Card -->
-          <div class="card mb-3" >
-           <div class="row">
+          <div class="card mb-3 cuerpo-body-card" >
+           <div class="row mb-4">
              <div class="col-md-5">
                <img id="tomo_Manga" src="" alt="">
              </div>
@@ -254,17 +254,7 @@
          </div>
           <!-- fin card -->
          </div>
-         <div class="modal-footer">
-         
-   
-           <button
-             type="button"
-             class="btn btn-secondary"
-             data-dismiss="modal"
-           >
-             Cerrar
-           </button>
-         </div>
+       
        </div>
      </div>
    </div>
