@@ -160,6 +160,10 @@ textarea.form-control::placeholder {
   background-color: #f56300;
 }
 
+.text-required {
+  color: #f56300;
+}
+
 .contact-info {
   display: flex;
   justify-content: center;
