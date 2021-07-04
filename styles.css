@@ -198,6 +198,42 @@ textarea.form-control::placeholder {
 
 /* Fin de contacto */
 
+/* Error 404 */
+.error-title {
+  text-align: center;
+  font-size: 180px;
+  color: #eb8d12;
+}
+
+.error-subtitle {
+  color: #fa4500;
+}
+
+#error-body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: relative;
+}
+
+#error-body::after {
+  content: '';
+  background: url(./img/error-background.jpg);
+  opacity: 0.06;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+#error-main {
+  height: 100%;
+}
+
+/* Fin de Error 404 */
+
 /* Sección footer */
 .footer-pagina {
   margin-top: 50px;
