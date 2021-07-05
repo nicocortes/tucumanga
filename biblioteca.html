@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <link rel="shortcut icon" href="img/favicon-02.png" type="image/png">
+    <link rel="stylesheet" href="./styles.css">
+
+    <title>Tucumanga</title>
+  </head>
+  <body>
+    <header>
+      <nav id="nav" class="navbar navbar-expand-lg navbar-dark fondoNav">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            
+            <a class="nav-link active" id="iniciarSesion" href="login.html"
+              ><i class="fa fa-sign-in" aria-hidden="true"></i> INICIA SESIÓN</a>
+            <a class="d-none" id="cierraSesion" href="login.html" onclick="cerrarSesion()"
+              ><i class="fa fa-sign-in" aria-hidden="true"></i> CERRAR SESIÓN</a>
+            <a class="nav-link text-white"  href="index.html">INICIO</a>
+            <a class="nav-link text-white activado"  href="biblioteca.html">BIBLIOTECA</a>
+            <a class="nav-link text-white"  href="contacto.html">CONTACTO</a>
+            <a class="d-none" id="admin" href="administracion.html">ADMINISTRACIÓN</a>
+            <a class="d-none" id="alta" href="altaLibros.html">SUBIR MANGA</a>
+          </div>
+        </div>
+        <a class="navbar-brand" href="index.html"><img src="img/logo.png" 
+          class="img-iconoNav" alt="" /></a>
+      </nav>
+    </header>
+    <main>
+      <!-- Seccion Biblioteca -->
+      <section>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12 col-lg-12 col-xl-9">
+              <div class="container-fluid">
+                <div class="row">
+                  <!-- Seccion buscador -->
+                 <div class="col-12 mt-4">
+              <div class="input-group my-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="..."
+                  aria-label="Recipient's username"
+                  aria-describedby="button-addon2"
+                  id="textBuscar"
+                />
+                <div class="input-group-append">
+                  <button
+                    class="btn  bt-categoria"
+                    type="button"
+                    id="button-addon2"
+                    onclick="filterBiblio()"
+                  >
+                    Buscar
+                  </button>
+                </div>
+              </div>
+            </div> 
+                </div>
+                <!-- Fin Seccion buscador -->
+                <!-- Botones -->
+                <div class="row">
+                  <div class="col-12 col-md-3 col-xl-6 "></div>
+                 
+               
+              <!--Filtrar -->
+              <!-- demografia -->
+              <div class="btn-group col-12 col-md-3 col-xl-2 mt-1" role="group">
+                <button id="btnGroupDrop1" type="button" class="btn bt-categoria dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Demografia
+                </button>
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                  <a class="dropdown-item" href="#" onclick="filterShonnen()">Shonnen</a>
+                  <a class="dropdown-item" href="#" onclick="filterSeinen()">Seinen</a>
+                  <a class="dropdown-item" href="#" onclick="filterShôjo()">Shôjo</a>
+                  <a class="dropdown-item" href="#" onclick="filterJosei()">Josei</a>
+                  <a class="dropdown-item" href="#" onclick="filterKodomo()">Kodomo</a>
+                </div>
+              </div>
+              <!-- Fin demografia -->
+            <!-- Fin filtrar -->
+             <!-- Genero -->
+                  <div class="btn-group col-12 col-md-3 col-xl-2 mt-1" role="group">
+                  <button id="btnGroupDrop1" type="button" class="btn bt-categoria dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Categorias
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                    <a class="dropdown-item" href="#" onclick="filterAccion()">Accion</a>
+                    <a class="dropdown-item" href="#" onclick="filterDeporte()">Deporte</a>
+                    <a class="dropdown-item" href="#" onclick="filterRomance()">Romance</a>
+                    <a class="dropdown-item" href="#" onclick="filterTerror()">Terror</a>
+                    <a class="dropdown-item" href="#" onclick="filterSuspenso()">Suspenso</a>
+                    <a class="dropdown-item" href="#" onclick="filterMecha()">Mecha</a>
+                  </div>
+                </div>
+                <!-- Fin genero -->
+             <!-- Organizar -->
+                
+             <div class="btn-group col-12 col-md-3 col-xl-2 mt-1" role="group">
+              <button id="btnGroupDrop1" type="button" class="btn bt-categoria dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Organizar
+              </button>
+              <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                <a class="dropdown-item" href="#" onclick = "moverAZ()">Organizar (a-z)</a>
+                <a class="dropdown-item" href="#" onclick = "moverZA()">Organizar (z-a)</a>                  
+              </div>
+            </div>
+          <!-- Fin Orginizar -->
+                <!-- Fin Botones -->
+                </div>
+              </div>
+              <!-- biblioteca -->
+              <div class="container-fluid">
+                <div class="row pl-2 mt-4">
+                  <h5 class="mt-4 font-weight-bold titleHome text-white">Biblioteca</h5>
+                </div>
+                <div class="row text-white mt-2">
+                  <span class="pl-3 pr-1">Cantidad de mangas:</span><span id="contadorManga"></span>
+                </div>
+                
+                <div class="row font-weight-bold" id="IMGtotal3">
+             
+                </div>
+              </div>
+              <br><br><br><br>
+              
+    
+            </div>
+            <!-- seccion 2 -->
+            <div class="col-12 col-lg-12 col-xl-3 mt-3">
+              <div class="container">
+                
+                 <div class="row">
+                    <!-- Facebook -->
+               
+                  <div class="col-12 col-md-6 col-lg-6 col-xl-12 mt-4 mb-4">
+                    <iframe
+                      src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FTucumanga-103114072026636&tabs=timeline&width=340&height=474&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+                      class="facebook"
+                      style="border: none; overflow: hidden"
+                      scrolling="no"
+                      frameborder="0"
+                      allowfullscreen="true"
+                      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                    ></iframe>
+                  </div>
+                   <!-- Fin FaceBook -->
+
+                   <!-- Discord -->
+                  <div class="col-12 col-md-6 col-lg-6 col-xl-12 mt-4 mb-4">
+                    <iframe
+                      src="https://discordapp.com/widget?id=856703470156382229&theme=dark"
+                      class="discord"
+                      allowtransparency="true"
+                      frameborder="0"
+                      sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+                    ></iframe>
+                  </div>
+               
+                <!-- Fin de Discord -->
+
+                </div>
+               
+              </div>
+            </div>
+            <!-- fin -->
+            </div>
+          </div>
+        </div>
+      </section>
+      <br>
+      <!--Fin Seccion Biblioteca -->
+    </main>
+      <!--Fin Seccion Biblioteca -->
+    </main>
+   
+
+    <!--Footer-->
+ <footer class="footer-pagina">
+  <div class="container">
+    <div class="row text-center mt-2">
+      <div class="col-12 col-md-4 mb-2 pb-4 mx-auto">
+        <img  src="img/logo.png" class="img-iconof pt-3" width="100px" alt="logo footer">
+      </div>
+      <div class="col-12 col-md-4 mb-4 mb-md-2 d-flex align-items-center justify-content-center">
+              <a href="error404.html"><i class="fa fa-facebook fa-2x text-white mx-2" aria-hidden="true"></i></a>
+              <a href="error404.html"><i class="fa fa-twitter fa-2x text-white mx-2" aria-hidden="true"></i></a>
+              <a href="error404.html"><i class="fa fa-instagram fa-2x text-white mx-2" aria-hidden="true"></i></a>
+      </div>
+      <div class="col-12 col-md-4 mb-4 mb-md-2 d-flex align-items-center justify-content-center">
+        <span>+543815673097 <br> Tucumán, Argentina <br> mangatuc@gmail.com</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 text-center">
+        <p class="small">&copy; Tucumanga 2021. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+    <!-- Modal -->
+    <div
+    class="modal fade bd-example-modal-xl"
+    id="verManga"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="TituloModal"></h3>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- Card -->
+          <div class="card mb-3 cuerpo-body-card" >
+           <div class="row mb-4">
+             <div class="col-12 col-md-12 col-lg-5 col-xl-5">
+               <img id="tomo_Manga" src="" alt="">
+             </div>
+             <div class="col-12 col-md-12 col-lg-7 col-xl-7">
+               <div class="card-body-modal">
+                
+                 <p class="card-text mt-4">
+                   <strong>Autor: </strong><span id="text_autor"></span>
+                 </p>
+                  <p class="card-text">
+                   <strong>Fecha de publicación: </strong><span id="text_Año"></span>
+                 </p>
+                 <p class="card-text">
+                  <strong>Demografia: </strong><span id="demogText"></span>
+                </p>
+                 <p class="card-text">
+                   <strong>Categoria: </strong><span id="text_categoti"></span>
+                 </p>
+                
+                 <p class="card-text">
+                   <strong>Editorial: </strong><span id="text_Editorial"></span>
+                 </p>
+                 
+                 <p class="card-text">
+                   <strong>Sinopsis: </strong>
+                   <br>
+                   <span id="text_Sinopsis"></span>
+                   <br>
+                   <br>
+                 </p>
+                 <p class="card-text">
+                   <strong>Tomo 1: </strong>
+                 </p>
+                 <p>
+                   <a href="" target=”_blank” id="urlDeTomo"></a>
+                 </p>
+              
+                 <p class="card-text">
+                   <small class="text-muted" id="text_Small" ></small>
+                 </p>
+               </div>
+             </div>
+           </div>
+         </div>
+          <!-- fin card -->
+         </div>
+        
+       </div>
+     </div>
+   </div>
+   <!-- fin modal -->
+
+ 
+   
+   <script src="./js/nav.js"></script> 
+   <script src="./js/biblioteca.js"></script> 
+
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+      crossorigin="anonymous"
+    ></script>
+     <!-- iconos: -->
+     <script src="https://use.fontawesome.com/a79dcfd0b0.js"></script>
+  </body>
+</html>

@@ -2,32 +2,27 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
       integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
       crossorigin="anonymous"
     />
-    <link
-      rel="stylesheet"
-      href="path/to/font-awesome/css/font-awesome.min.css"
-    />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css" />
     <!-- Tipografía Montserrat -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;1,300&display=swap"
       rel="stylesheet"
     />
+    <link rel="shortcut icon" href="img/favicon-02.png" type="image/png" />
     <link rel="stylesheet" href="styles.css" />
     <title>Tucumanga</title>
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg navbar-dark fondoNav">
+      <nav id="nav" class="navbar navbar-expand-lg navbar-dark fondoNav">
         <button
           class="navbar-toggler"
           type="button"
@@ -41,68 +36,65 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-link active" href="#"
-              ><i class="fa fa-sign-in" aria-hidden="true"></i> INICIA
-              SESIÓN<span class="sr-only">(current)</span></a
+            <a class="nav-link active" id="iniciarSesion" href="login.html"
+              ><i class="fa fa-sign-in " aria-hidden="true"></i> INICIA SESIÓN</a
             >
-            <a class="nav-link" href="home.html">INICIO</a>
-            <a class="nav-link" href="busqueda.html">BIBLIOTECA</a>
-            <a class="nav-link" href="contacto.html" tabindex="-1">CONTACTO</a>
+            <a class="d-none" id="cierraSesion" href="login.html" onclick="cerrarSesion()"
+              ><i class="fa fa-sign-in" aria-hidden="true"></i> CERRAR SESIÓN</a
+            >
+            <a class="nav-link text-white" href="index.html">INICIO</a>
+            <a class="nav-link text-white" href="biblioteca.html">BIBLIOTECA</a>
+            <a class="nav-link text-white" href="contacto.html">CONTACTO</a>
+            <a class="d-none" id="admin" href="administracion.html">ADMINISTRACIÓN</a>
+            <a class="d-none" id="alta" href="altaLibros.html">SUBIR MANGA</a>
           </div>
         </div>
-        <a class="navbar-brand" href="home.html"
-          ><img src="img/logo.png" alt="logo"
-        /></a>
+        <a class="navbar-brand" href="index.html"><img src="img/logo.png" class="img-iconoNav" alt="" /></a>
       </nav>
     </header>
 
     <main>
-
       <!-- Seccion Login -->
       <section>
         <br />
-        <div class="container">
+        <div class="container text-white">
           <h1 class="text-center p-5">INICIA SESIÓN</h1>
-          <form class="container formulario">
+          <form onsubmit="handleSubmit(event)" class="container formulario">
             <div class="form-group">
-              <label for="exampleInputEmail1" class="font-weight-bold"
-                >MAIL</label
-              >
+              <label for="exampleInputEmail1" class="font-weight-bold">MAIL</label>
               <input
                 type="email"
+                name="email"
                 class="form-control"
                 id="exampleInputEmail1"
+                onchange="handleChange(event)"
                 placeholder="example@gmail.com"
                 aria-describedby="emailHelp"
               />
             </div>
             <div class="form-group mt-4">
-              <label for="exampleInputPassword1" class="font-weight-bold"
-                >CONTRASEÑA</label
-              >
+              <label for="exampleInputPassword1" class="font-weight-bold">CONTRASEÑA</label>
               <input
                 type="password"
+                name="contraseña"
                 class="form-control"
                 id="exampleInputPassword1"
+                onchange="handleChange(event)"
               />
-              <small>*Debe contener 8 o más caracteres</small>
             </div>
             <div class="form-group form-check"></div>
             <div class="d-flex justify-content-center">
-              <button type="submit" class="btn btn-danger font-weight-bold">
-                INGRESAR
-              </button>
+              <button type="submit" class="btn btn-orange font-weight-bold">INGRESAR</button>
             </div>
             <p class="text-center p-4 font-weight-bold">
               Aún no tienes una cuenta?
-              <a href="loginRegistro.html"><b class="text-primary">Regístrate</b></a>
+              <a href="./Registro.html"><b class="text-primary">Regístrate</b></a>
             </p>
           </form>
         </div>
         <br />
       </section>
       <!--Fin Seccion Login -->
-
     </main>
 
     <!--Footer-->
@@ -110,44 +102,23 @@
       <div class="container">
         <div class="row text-center mt-2">
           <div class="col-12 col-md-4 mb-2 pb-4 mx-auto">
-            <img src="img/logo.png" class="pt-3" width="100px" alt="logo footer" />
+            <img src="img/logo.png" class="img-iconof pt-3" width="100px" alt="logo footer" />
           </div>
           <div
-            class="
-              col-12 col-md-4
-              mb-4 mb-md-2
-              d-flex
-              align-items-center
-              justify-content-center
-            "
+            class="col-12 col-md-4 mb-4 mb-md-2 d-flex align-items-center justify-content-center"
           >
-            <a href="#"
-              ><i
-                class="fa fa-facebook fa-2x text-white mx-2"
-                aria-hidden="true"
-              ></i
+            <a href="error404.html"
+              ><i class="fa fa-facebook fa-2x text-white mx-2" aria-hidden="true"></i
             ></a>
-            <a href="#"
-              ><i
-                class="fa fa-twitter fa-2x text-white mx-2"
-                aria-hidden="true"
-              ></i
+            <a href="error404.html"
+              ><i class="fa fa-twitter fa-2x text-white mx-2" aria-hidden="true"></i
             ></a>
-            <a href="#"
-              ><i
-                class="fa fa-instagram fa-2x text-white mx-2"
-                aria-hidden="true"
-              ></i
+            <a href="error404.html"
+              ><i class="fa fa-instagram fa-2x text-white mx-2" aria-hidden="true"></i
             ></a>
           </div>
           <div
-            class="
-              col-12 col-md-4
-              mb-4 mb-md-2
-              d-flex
-              align-items-center
-              justify-content-center
-            "
+            class="col-12 col-md-4 mb-4 mb-md-2 d-flex align-items-center justify-content-center"
           >
             <span
               >+543815673097 <br />
@@ -158,15 +129,20 @@
         </div>
         <div class="row">
           <div class="col-12 text-center">
-            <p class="small">
-              &copy; Tucumanga 2021. Todos los derechos reservados.
-            </p>
+            <p class="small">&copy; Tucumanga 2021. Todos los derechos reservados.</p>
           </div>
         </div>
       </div>
     </footer>
 
     <!--Fin footer-->
+    <script src="js/login.js"></script>
+    <script src="js/nav.js"></script>
+
+    <!-- Sweetalert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- <script src="js/nav.js"></script> -->
+
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

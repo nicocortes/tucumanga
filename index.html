@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+
+    <link rel="shortcut icon" href="img/favicon-02.png" type="image/png" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Tucumanga</title>
+  </head>
+  <body>
+    <header>
+      <nav id="nav" class="navbar navbar-expand-lg navbar-dark fondoNav">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link active" id="iniciarSesion" href="login.html"
+              ><i class="fa fa-sign-in" aria-hidden="true"></i> INICIA SESIÓN</a
+            >
+            <a class="d-none" id="cierraSesion" href="login.html" onclick="cerrarSesion()"
+              ><i class="fa fa-sign-in" aria-hidden="true"></i> CERRAR SESIÓN</a
+            >
+            <a class="nav-link text-white activado" href="index.html">INICIO</a>
+            <a class="nav-link text-white" href="biblioteca.html">BIBLIOTECA</a>
+            <a class="nav-link text-white" href="contacto.html">CONTACTO</a>
+            <a class="d-none" id="admin" href="administracion.html">ADMINISTRACIÓN</a>
+            <a class="d-none" id="alta" href="altaLibros.html">SUBIR MANGA</a>
+          </div>
+        </div>
+        <a class="navbar-brand" href="index.html"
+          ><img src="img/logo.png" class="img-iconoNav" alt="logo"
+        /></a>
+      </nav>
+    </header>
+    <main>
+      <!--  Secciones -->
+      <section class="mt-4">
+        <div class="container-fluid">
+          <div class="row font-weight-bold">
+            <div class="col-12 col-md-12 col-xl-9">
+              <!-- Seccion Top -->
+              <div class="container">
+                <div class="row">
+                  <h5 class="mt-4 font-weight-bold titleHome text-white">Populares</h5>
+                </div>
+                <div class="row" id="IMGtotal"></div>
+              </div>
+              <!-- Fin de Seccion Top -->
+
+              <!-- Seccion Ultimas Subidas -->
+              <div class="container mt-4">
+                <div class="row">
+                  <h5 class="mt-4 font-weight-bold titleHome text-white">Últimos Ingresos</h5>
+                </div>
+
+                <div class="row font-weight-bold mb-4" id="IMGtotal2"></div>
+                <br /><br /><br />
+              </div>
+              <!-- Fin de Seccion Ultimas subidas -->
+            </div>
+
+            <!-- Seccion Tablas -->
+            <div class="col-12 col-md-12 col-xl-3 mt-4 mb-4">
+              <div class="container-fluid">
+                <!-- Boton subir archivo -->
+                <div class="container">
+                  <div class="row text-white text-center top-title-table mb-3">
+                    <div class="col-12 pb-1 pt-1"><h3>Top más vistos</h3></div>
+                  </div>
+                  <div class="row text-white titleHPopular">
+                    <div class="col-2 pb-1 pt-1"><h3><i class="fa fa-star fa text-white mx-2" aria-hidden="true"></i
+                      ></h3></div>
+                    <div class="col-7 pb-1 pt-1"><h3>Popular</h3></div>
+                    <div class="col-3  pb-1 pt-1 text-center"><h3><i class="fa fa-eye fa text-white mx-2 pl-3" aria-hidden="true"></i
+                      ></h3></div>
+                      
+                  </div>
+                </div>
+                <div class="container-fluid mb-4" id="topTabla"></div>
+                <!-- <div class="row">
+                  <div class="col-12">
+                    <button class="btn btn-irRegistro btn-block pt-3 pb-3 font-weight-bold">
+                      <i class="fa fa-upload"></i> Resgistrar Contenido
+                    </button>
+                  </div>
+                  <br />
+                  <br />
+                </div> -->
+                <!--Fin de Boton subir archivo -->
+
+                <!-- Discord -->
+                <div class="row">
+                  <div class="col-12 col-md-6 col-lg-6 col-xl-12 mt-4 mb-4">
+                    <iframe
+                      src="https://discordapp.com/widget?id=856703470156382229&theme=dark"
+                      class="discord"
+                      allowtransparency="true"
+                      frameborder="0"
+                      sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+                    ></iframe>
+                  </div>
+
+                  <!-- Fin de Discord -->
+
+                  <!-- Facebook -->
+
+                  <div class="col-12 col-md-6 col-lg-6 col-xl-12 mt-4 mb-4">
+                    <iframe
+                      src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FTucumanga-103114072026636&tabs=timeline&width=340&height=474&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+                      class="facebook"
+                      style="border: none; overflow: hidden"
+                      scrolling="no"
+                      frameborder="0"
+                      allowfullscreen="true"
+                      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                    ></iframe>
+                  </div>
+                </div>
+                <!-- Fin FaceBook -->
+              </div>
+            </div>
+            <!-- Fin seccion tablas -->
+          </div>
+        </div>
+      </section>
+      <!--  Fin de Secciones  -->
+    </main>
+    <!--Footer-->
+    <footer class="footer-pagina mt-4">
+      <div class="container">
+        <div class="row text-center mt-2">
+          <div class="col-12 col-md-4 mb-2 pb-4 mx-auto">
+            <img src="img/logo.png" class="img-iconof" width="100px" alt="logo footer" />
+          </div>
+          <div
+            class="col-12 col-md-4 mb-4 mb-md-2 d-flex align-items-center justify-content-center"
+          >
+            <a href="error404.html"
+              ><i class="fa fa-facebook fa-2x text-white mx-2" aria-hidden="true"></i
+            ></a>
+            <a href="error404.html"
+              ><i class="fa fa-twitter fa-2x text-white mx-2" aria-hidden="true"></i
+            ></a>
+            <a href="error404.html"
+              ><i class="fa fa-instagram fa-2x text-white mx-2" aria-hidden="true"></i
+            ></a>
+          </div>
+          <div
+            class="col-12 col-md-4 mb-4 mb-md-2 d-flex align-items-center justify-content-center"
+          >
+            <span
+              >+543815673097 <br />
+              Tucumán, Argentina <br />
+              mangatuc@gmail.com</span
+            >
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 text-center">
+            <p class="small">&copy; Tucumanga 2021. Todos los derechos reservados.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!--Fin footer-->
+
+    <!-- Modal -->
+    <div
+      class="modal fade bd-example-modal-xl"
+      id="verManga"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="TituloModal"></h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- Card -->
+            <div class="card mb-3 cuerpo-body-card">
+              <div class="row mb-4">
+                <div class="col-12 col-md-12 col-lg-5 col-xl-5">
+                  <img id="tomo_Manga" src="" alt="" />
+                </div>
+                <div class="col-12 col-md-12 col-lg-7 col-xl-7">
+                  <div class="card-body-modal">
+                    <p class="card-text mt-4">
+                      <strong>Autor: </strong><span id="text_autor"></span>
+                    </p>
+                    <p class="card-text">
+                      <strong>Fecha de publicación: </strong><span id="text_Año"></span>
+                    </p>
+                    <p class="card-text">
+                      <strong>Demografia: </strong><span id="demogText"></span>
+                    </p>
+                    <p class="card-text">
+                      <strong>Categoria: </strong><span id="text_categoti"></span>
+                    </p>
+
+                    <p class="card-text">
+                      <strong>Editorial: </strong><span id="text_Editorial"></span>
+                    </p>
+
+                    <p class="card-text">
+                      <strong>Sinopsis: </strong>
+                      <br />
+                      <span id="text_Sinopsis"></span>
+                      <br />
+                      <br />
+                    </p>
+                    <p class="card-text">
+                      <strong>Tomo 1: </strong>
+                    </p>
+                    <p>
+                      <a href="" target="”_blank”" id="urlDeTomo"></a>
+                    </p>
+                    <p class="card-text">
+                      <small class="text-muted" id="text_Small"></small>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- fin card -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- fin modal -->
+
+    <script src="./js/Registro.js"></script>
+    <script src="js/nav.js"></script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+      crossorigin="anonymous"
+    ></script>
+    <!-- iconos: -->
+    <script src="https://use.fontawesome.com/a79dcfd0b0.js"></script>
+  </body>
+</html>
