@@ -215,25 +215,6 @@ if (cuerpoLib2) {
     cargarManga2()
 }
 
-let usuarioLog = JSON.parse(localStorage.getItem("usuario")) || "";
 
-let administrador = {
-    email: "admin@gmail.com",
-    contraseña: "admin",
-  };
-
-function redirigirHome() {
-  if (usuarioLog === "") {
-    location.replace("/index.html");
-  } else {
-    if (
-        usuarioLog.email != administrador.email &&
-        usuarioLog.contraseña != administrador.contraseña
-    ) {
-      location.replace("/index.html");
-    }
-  }
-}
-redirigirHome();
 
 
