@@ -38,7 +38,7 @@ function cargarManga3(Mangas) {
      
   />
   <div class="verMangaModal text-center">
-  <button class="btn font-weight-bold" onclick='verManga(${indice})' >--Leer--</button>
+  <button class="btn font-weight-bold pr-4 pl-4" onclick='verManga(${indice})' >Leer</button>
   </div>
   <div class="capa text-white text-center">
     <h6>${libro.titulo}</h6>
