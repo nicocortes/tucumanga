@@ -11,6 +11,12 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css" />
+        <!-- Tipografía Montserrat -->
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;1,300&display=swap"
+          rel="stylesheet"
+        />
     <link rel="shortcut icon" href="img/favicon-02.png" type="image/png" />
     <link rel="stylesheet" href="styles.css" />
     <title>Tucumanga</title>
@@ -39,7 +45,6 @@
             >
             <a class="nav-link text-white" href="index.html">INICIO</a>
             <a class="nav-link text-white" href="biblioteca.html">BIBLIOTECA</a>
-            <a class="nav-link text-white" href="about.html">SOBRE NOSOTROS</a>
             <a class="nav-link text-white" href="contacto.html">CONTACTO</a>
             <a class="d-none" id="admin" href="administracion.html">ADMINISTRACIÓN</a>
             <a class="d-none" id="alta" href="altaLibros.html">SUBIR MANGA</a>
@@ -61,7 +66,7 @@
                 </div>
               </div>
               <div class="row h-50">
-                <div class="col col-12 col-lg-6 bg-danger contact-info">
+                <div class="col col-12 col-lg-6 contact-number contact-info">
                   <i class="fa fa-whatsapp text-white" aria-hidden="true"> +543815673097</i>
                 </div>
                 <div class="col col-12 col-lg-6 p-0 contact-map">
@@ -80,51 +85,53 @@
             <div class="col-md-6 contact-form">
               <h3>Cuéntanos, ¿qué necesitas?</h3>
               <hr class="form-hr" />
-              <form>
+              <form onsubmit="enviandoMensaje(event)">
                 <div class="form-row">
                   <div class="form-group col-md-6">
-                    <label>Nombre: <span class="text-danger">*</span></label>
+                    <label>Nombre: <span class="text-required">*</span></label>
                     <input
                       type="text"
                       class="form-control"
-                      id="exampleFormControlInput1"
-                      required
+                      id="contact-nombre"
+      
                     />
                   </div>
                   <div class="form-group col-md-6">
-                    <label>Teléfono:</label>
-                    <input type="tel" class="form-control" id="exampleFormControlInput1" />
+                    <label class="text-nowrap">Teléfono: <small class="font-italic">(0381-154456699)</small></label>
+                    <input type="tel" class="form-control" id="contact-telefono" pattern="[0-9]{4}-[0-9]{9}" />
                   </div>
                 </div>
                 <div class="form-row">
                   <div class="form-group col-md-6">
-                    <label>E-mail: <span class="text-danger">*</span></label>
+                    <label>E-mail: <span class="text-required">*</span></label>
                     <input
-                      type="text"
+                      type="email"
                       class="form-control"
-                      id="exampleFormControlInput1"
-                      required
+                      id="contact-email"
+                      
                     />
                   </div>
                   <div class="form-group col-md-6">
                     <label>Asunto:</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" />
+                    <input type="text" class="form-control" id="contact-asunto" />
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="exampleFormControlTextarea1"
-                    >Mensaje: <span class="text-danger">*</span></label
+                  <label 
+                    >Mensaje: <span class="text-required">*</span></label
                   >
                   <textarea
                     class="form-control"
-                    id="exampleFormControlTextarea1"
+                    id="contact-mensaje"
                     rows="3"
                     placeholder="¿No encuentras tu manga favorito? ¿No sabes como cargar tu manga? Cuéntanos..."
-                    required
+                    
                   ></textarea>
                 </div>
                 <div>
-                  <button class="btn form-button btn-danger btn-block">Enviar</button>
+                  <button class="btn form-button font-weight-bold btn-orange btn-block">
+                    Enviar
+                  </button>
                   <small class="text-muted font-italic">(*) Campos obligatorios</small>
                 </div>
               </form>
@@ -132,7 +139,107 @@
           </div>
         </div>
       </section>
+          <div class="about-divider">
+            <h1>¿QUERÉS CONOCERNOS UN POCO MÁS?</h1>
+          </div>
       <!-- SECTION CONTACT -->
+      <section class="mt-4 mb-4 text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h3 class="mt-4 font-weight-bold">Nuestra Historia</h3><hr>
+                </div>
+            </div>
+            <div class="row text-white">
+                <div class="col-12 col-md-8 offset-md-2 text-center ">
+                    <p> <b id="about-tucumanga-tiltle">TUCUMANGA</b> es una librería electrónica especializada en la literatura independiente de Manga, Cómics y Literatura Fantástica. <hr>
+                    Tucumanga No Pertenece a ninguna editorial o cadena de tiendas. Tampoco sus dueños son copropietarios de editoriales. Es un proyecto independiente que no está influenciado o depende de políticas corporativas, estrategias editoriales o similares. <hr>
+                      Todo lo que hacemos o sucede es gracias al apoyo de nuestros usuarios, que disfrutan de nuestro sitio, aportando también sus propios editoriales, formando una familia que crece día a día con el apoyo de todos. <hr>
+                      Esta página dio inicio en Julio de 2020, siendo pionera en la literatura electrónica no solo en la provincia de Tucumán sino de toda la Argentina.
+                      Nuestro equipo aborda las necesidades y los procesos de cambio con una visión integral; es decir, considerando la estrategia, los procesos, la tecnología, la gente y la cultura de nuestros usuarios. <hr>
+                      Agradecemos la oportunidad que nos brindan para presentarles nuestros servicios y experiencia aplicables a nuestra página.
+                    </p>
+                </div>
+            </div>
+        </div>
+        </section>
+        <!-- Seccion de equipo -->
+        <section class="mb-4 text-white">
+          <div class="container">
+            <div class="row mb-4 mt-4">
+              <div class="col">
+                <h2 class="text-center font-weight-bold">Nuestro Equipo:</h2><hr>
+              </div>
+            </div>
+            <div class="row mb-4">
+              <div class="col-12 col-md-6 mt-2 mb-4 text-center">
+                <div class="container-avatar">
+                  <img class="img-avatarabout" src="./img/avatar4.jpg" alt="Avatar 1" />
+                </div>
+                <div class="mt-2">
+                  <h3>Diego Ivan Paez</h3>
+                </div>
+                <div>
+                  <span
+                    >General Manager/RollinGroup.
+                  </span>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 mt-2 mb-4 text-center">
+                <div class="container-avatar">
+                  <img class="img-avatarabout" src="./img/avatar2.jpg" alt="Avatar 2" />
+                </div>
+                <div class="mt-2">
+                  <h3>Julio Eduardo Zarate</h3>
+                </div>
+                <div>
+                  <span
+                    >Coordinador de Logística/RollinGroup.
+                  </span>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 mt-4 mb-4 text-center">
+                <div>
+                  <img class="img-avatarabout" src="./img/avatar1.jpg" alt="Avatar 3" />
+                </div>
+                <div class="mt-2">
+                  <h3>Rocio Pereyra</h3>
+                </div>
+                <div>
+                  <span
+                    >Gerente de Operaciones/RollinGroup.
+                  </span>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 mt-4 mb-4 text-center">
+                <div>
+                  <img class="img-avatarabout" src="./img/avatar3.jpg" alt="Avatar 4" />
+                </div>
+                <div class="mt-2">
+                  <h3>Nicolas Cortes Carbajo</h3>
+                </div>
+                <div>
+                  <span
+                    >Lider Marketing Digital/RollinGroup.
+                  </span>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 mt-4 mb-4 text-center">
+                <div>
+                  <img class="img-avatarabout" src="./img/avatar5.jpg" alt="Avatar 5" />
+                </div>
+                <div class="mt-2">
+                  <h3>Rodriguez Fernando</h3>
+                </div>
+                <div>
+                  <span
+                    >Analista Adm. E-Commerce/RollinGroup.
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
     </main>
     <!--Footer-->
     <footer class="footer-pagina">
@@ -184,6 +291,8 @@
       integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://use.fontawesome.com/a79dcfd0b0.js"></script>
+    <script src="./js/contacto.js"></script>
   </body>
 </html>
