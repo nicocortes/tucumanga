@@ -219,13 +219,13 @@ let administrador = {
 
 function redirigirHome() {
   if (usuarioLog === "") {
-    location.replace("/home.html");
+    location.replace("/index.html");
   } else {
     if (
         usuarioLog.email != administrador.email &&
         usuarioLog.contraseña != administrador.contraseña
     ) {
-      location.replace("/home.html");
+      location.replace("/index.html");
     }
   }
 }

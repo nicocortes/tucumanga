@@ -11,9 +11,10 @@ function cambiarNav() {
     usuarioLogeado.contraseña === admin.contraseña
   ) {
     let link = document.querySelector("#admin").className="nav-link text-white";
-    console.log("El usuario es el administrador");
-  } else {
-    console.log("El usuario no es el administrador");
+  }
+  if(usuarioLogeado.email === admin.email &&
+    usuarioLogeado.contraseña === admin.contraseña){
+    let link = document.querySelector("#alta").className="nav-link text-white";
   }
 }
 
