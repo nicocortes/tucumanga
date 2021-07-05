@@ -26,7 +26,7 @@ function cargarManga3(Mangas) {
       return item.titulo === libro.titulo;
     });
 
-    console.log(indice);
+    
     let fila = document.createElement("div");
     fila.classList = "col-6 col-md-4 col-lg-3 col-xl-2 mt-4 mb-4 img-topm";
     let datos = `    
@@ -55,7 +55,7 @@ function positionTop() {
   mangasTop = manga;
   mangasTop.visitas = mangasTop.visitas + 1;
   localStorage.setItem("biblioteca", JSON.stringify(biblioteca));
-  console.log(mangasTop.visitas);
+  mangasTop.visitas
 }
 
 // Mover la posicion del top
@@ -73,7 +73,7 @@ function moverVisto() {
 }
 
 function verManga(id) {
-  console.log(id);
+  
   manga = biblioteca[id];
   document.querySelector("#TituloModal").innerText = manga.titulo;
   document.querySelector("#tomo_Manga").src = manga.imagen;
@@ -256,7 +256,7 @@ function moverZA(){
         }
         return 0
     })
-    console.log(mangasTop)
+    mangasTop
     contarRegistro(mangasTop)
     cargarManga3(mangasTop)
 }
@@ -271,7 +271,7 @@ function moverAZ(){
         }
         return 0
     })
-    console.log(mangasTop)
+    mangasTop
     contarRegistro(mangasTop)
     cargarManga3(mangasTop)
 }
