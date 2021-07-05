@@ -95,9 +95,15 @@ function validarGeneral(element) {
   } else {
     element.className = 'form-control is-valid';
   }
-  if(element.value > 30){
-    splice(element.value.length-1, 1)
+}
+//codigo.value = codigo.value.slice(0,10);
+function limiteLetras(element){
+  if(element.value.length > 30){
+    element.value= element.value.slice(0, 30)
   }
 }
-
-// function limiteLetras(){
+function limiteMail(element){
+  if(element.value.length > 50){
+    element.value= element.value.slice(0, 50)
+  }
+}

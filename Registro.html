@@ -73,19 +73,19 @@ emailjs.init("user_5O6jQzZG4wMGV9DHkh7Ep");
             <div class="row">
                 <div class="col">
                     <label for="nombreRegistro" class="font-weight-bold">NOMBRE</label>
-                  <input onblur="validarGeneral(this)" type="text" class="form-control" placeholder="Juan" id="nombreRegistro">
+                  <input  onkeypress="limiteLetras(this)"  onblur="validarGeneral(this)" maxlength="30" type="text" class="form-control" placeholder="Juan" id="nombreRegistro">
                 </div>
                 <div class="col">
                     <label for="apellidoRegistro" class="font-weight-bold">APELLIDO</label>
-                  <input onblur="validarGeneral(this)" type="text" class="form-control" placeholder="Perez" id="apellidoRegistro">
+                  <input onkeypress="limiteLetras(this)" onblur="validarGeneral(this)" maxlength="30" type="text" class="form-control" placeholder="Perez" id="apellidoRegistro">
                 </div>
               </div>
               <div class="form-group pt-3">
                 <label for="exampleInputEmail1" class="font-weight-bold"
                   >MAIL</label
                 >
-                <input
-                onblur="validarGeneral(this)"
+                <input onkeypress="limiteMail(this)"
+                onblur="validarGeneral(this)" maxlength="50"
                   type="email"
                   class="form-control"
                   id="mailRegistro"
@@ -97,8 +97,8 @@ emailjs.init("user_5O6jQzZG4wMGV9DHkh7Ep");
                 <label for="exampleInputPassword1" class="font-weight-bold"
                   >CONTRASEÑA</label
                 >
-                <input
-                onblur="validarContraseña(this)"
+                <input onkeypress="limiteLetras(this)"
+                onblur="validarContraseña(this)" maxlength="30"
                   type="password"
                   class="form-control"
                   id="passwordRegistro"
