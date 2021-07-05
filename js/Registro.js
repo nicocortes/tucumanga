@@ -55,7 +55,12 @@ const agregarLib = function () {
         localStorage.setItem("biblioteca", JSON.stringify(biblioteca))
         
     } else {
-        alert("Faltan datos, ingreselos de nuevo.")
+        swal({
+          title: "Oops!",
+          text: "Faltan datos, ingreselos de nuevo",
+          icon: "error",
+          button: "ok",
+        });
     }
 
 }
