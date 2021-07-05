@@ -89,7 +89,7 @@ function cargarManga(Mangas){
       
   />
   <div class="verMangaModal text-center">
-  <button class="btn font-weight-bold" onclick='verManga(${indice})' >--Leer--</button>
+  <button class="btn font-weight-bold pr-4 pl-4" onclick='verManga(${indice})' >Leer</button>
   </div>
   <div class="capa text-white text-center">
     <h6>${libro.titulo}</h6>
@@ -116,7 +116,7 @@ function cargarManga2(){
       console.log(indice);
       if(vuelta < 8){
         let fila = document.createElement("div");
-        fila.classList = "col-6 col-md-3 col-xl-3  mt-4 mb-4 img-topm"
+        fila.classList = "col-6 col-md-3 col-xl-3  mt-4 mb-5 img-topm"
         let datos = `    
         <img
           src="${libro.imagen}"
@@ -124,7 +124,7 @@ function cargarManga2(){
           class="img-fluid"
       />
       <div class="verMangaModal text-center">
-      <button class="btn font-weight-bold" onclick='verManga(${indice})'>--Leer--</button>
+      <button class="btn font-weight-bold pr-4 pl-4" onclick='verManga(${indice})'>Leer</button>
       </div>
       <div class="capa text-white text-center">
         <h5>${libro.titulo}</h5>
@@ -166,8 +166,8 @@ function masVistos(){
         let colum = document.createElement("div")
         colum.classList = "row"
         let info = `
-        <div class="text-white col-2">
-        <h5> ${i + 1}</h5>
+        <div class="text-white text-center col-2">
+        <h5>${i + 1}º</h5>
         </div>
         <div class="text-white col-8">
         <h5>${mangasTop[i].titulo}</h5>
