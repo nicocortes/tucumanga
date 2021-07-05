@@ -12,7 +12,21 @@ body {
 /* Sección navbar */
 .fondoNav {
   background-color: #000000;
-  /* background-image: linear-gradient(to right top, #ff0000, #fa4500, #f56300, #f07a00, #eb8d12); */
+}
+
+
+.activado {
+  border-bottom: 1px solid #ff6600;
+  font-weight: bold;
+}
+
+
+
+.navbar-dark .navbar-nav .nav-link:hover {
+color: white;
+transition-duration: 0.5s;
+transform:scale(0.95);
+opacity: 0.9;
 }
 
 /* Home */
@@ -321,4 +335,23 @@ textarea.form-control::placeholder {
   background-image: linear-gradient(to right top, #ff0000, #fa4500, #f56300, #f07a00, #eb8d12);
   border: none;
   color: white;
+}
+
+
+.img-iconoNav{
+  transition-duration: 0.3s;
+}
+
+.img-iconoNav:hover{
+  transform: scale(0.9);
+  opacity: 0.8;
+}
+
+.img-iconof{
+  transition-duration: 0.3s;
+}
+
+.img-iconof:hover{
+  transform: scale(1.7);
+  opacity: 0.8;
 }
